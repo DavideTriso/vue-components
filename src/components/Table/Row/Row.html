@@ -18,6 +18,7 @@
 
   <td
     is="table-cell"
+    :is-footer="isFooter"
     v-if="isFooter"
     v-for="column in columns"
     :content="column.title"

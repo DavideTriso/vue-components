@@ -1,0 +1,9 @@
+// Imports
+@import "./../../../assets/stylus/mixins/mixins.styl"
+@import "./../../../assets/stylus/settings/variables.styl"
+
+.Table
+  +has(row) // Table__row
+    border-top: 1px solid $light_gray
+    &.Table__row--header
+      border: none

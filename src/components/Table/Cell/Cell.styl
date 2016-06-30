@@ -1,0 +1,38 @@
+// Imports
+@import "./../../../assets/stylus/mixins/mixins.styl"
+@import "./../../../assets/stylus/settings/variables.styl"
+
+.Table
+  +has(cell) // Table__cell
+    padding: 1rem 1rem
+    text-align: left
+    +variant(header)
+      color: $gray
+      font-weight: 400
+      &.Table__cell--primary
+        color: $primary
+      &.Table__cell--success
+        color: $success
+      &.Table__cell--danger
+        color: $danger
+      &.Table__cell--warning
+        color: $warning
+      &.Table__cell--info
+        color: $info
+      &.Table__cell--dark
+        color: $white
+    +variant(footer)
+      color: $gray
+      &.Table__cell--primary
+        color: $primary
+      &.Table__cell--success
+        color: $success
+      &.Table__cell--danger
+        color: $danger
+      &.Table__cell--warning
+        color: $warning
+      &.Table__cell--info
+        color: $info
+      &.Table__cell--dark
+        color: $white
+
