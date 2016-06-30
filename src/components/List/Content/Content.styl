@@ -1,0 +1,19 @@
+// Imports
+@import "./../../../assets/stylus/settings/variables.styl"
+@import "./../../../assets/stylus/mixins/mixins.styl"
+
+.List // List
+  +has('content')
+    display: inline-block
+    +variant('primary')
+      color: $primary
+    +variant('success')
+      color: $success
+    +variant('danger')
+      color: $danger
+    +variant('warning')
+      color: $warning
+    +variant('info')
+      color: $info
+    +variant('dark')
+      color: $white

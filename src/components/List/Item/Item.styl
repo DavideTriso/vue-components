@@ -1,0 +1,25 @@
+// Imports
+@import "./../../../assets/stylus/settings/variables.styl"
+@import "./../../../assets/stylus/mixins/mixins.styl"
+
+.List // List
+  +has('item')
+    display: block
+    margin: 0
+    padding: 1rem
+    list-style: none
+    border-bottom: 1px solid $light_gray
+    &:last-child
+      border: none
+    +variant('primary')
+      border-color: $primary_light
+    +variant('success')
+      border-color: $success_light
+    +variant('danger')
+      border-color: $danger_light
+    +variant('warning')
+      border-color: $warning_light
+    +variant('info')
+      border-color: $info_light
+    +variant('dark')
+      border-color: $blue_gray
