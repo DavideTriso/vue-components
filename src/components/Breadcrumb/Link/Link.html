@@ -3,11 +3,7 @@
   :class="classNames"
   v-link="to"
 >
-  <breadcrumb-content
-    :content="body.content"
-    :variants="body.variants"
-    :contextual-style="body.contextualStyle"
-  ></breadcrumb-content>
+  {{content}}
 </a>
 
 <a
@@ -15,9 +11,5 @@
   :class="classNames"
   :href="to"
 >
-  <breadcrumb-content
-    :content="body.content"
-    :variants="body.variants"
-    :contextual-style="body.contextualStyle"
-  ></breadcrumb-content>
+  {{content}}
 </a>

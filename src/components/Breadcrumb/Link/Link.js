@@ -1,5 +1,4 @@
 import ElementMixin from './../../../mixins/element';
-import * as BreadcrumbContent from './../Content/Content.vue';
 
 export default {
   data() {
@@ -10,10 +9,10 @@ export default {
 
   props: {
     /**
-     * The body
+     * The content
      */
-    body: {
-      type: Object,
+    content: {
+      type: String,
       required: true,
     },
 
@@ -32,13 +31,6 @@ export default {
       type: Boolean,
       required: true,
     },
-  },
-
-  components: {
-    /**
-     * The breadcrumb content component
-     */
-    BreadcrumbContent,
   },
 
   mixins: [

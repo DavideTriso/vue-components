@@ -7,19 +7,29 @@
     transition(100ms)
     color: $dark_blue_gray
     display: inline-block
+    vertical-align: middle
     text-decoration: none
-    &:hover
-      transition(100ms)
-      color: $primary
     +variant(primary) // Breadcrumb__link--primary
       color: $primary
+      &:hover
+        color: $primary_dark
     +variant(success) // Breadcrumb__link--success
       color: $success
+      &:hover
+        color: $success_dark
     +variant(danger) // Breadcrumb__link--danger
       color: $danger
+      &:hover
+        color: $danger_dark
     +variant(warning) // Breadcrumb__link--warning
       color: $warning
+      &:hover
+        color: $warning_dark
     +variant(info) // Breadcrumb__link--info
       color: $info
+      &:hover
+        color: $info_dark
     +variant(dark) // Breadcrumb__link--dark
       color: $blue_gray
+      &:hover
+        color: $dark_blue_gray
