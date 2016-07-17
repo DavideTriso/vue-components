@@ -1,0 +1,13 @@
+<th
+  v-if="isHeader"
+  :class="classNames"
+>
+  {{content}}
+</th>
+
+<td
+  v-if="!isHeader"
+  :class="classNames"
+>
+  {{content}}
+</td>

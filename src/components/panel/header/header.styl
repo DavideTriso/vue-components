@@ -1,0 +1,23 @@
+// Imports
+@import "../../../assets/stylus/mixins/mixins.styl"
+@import "../../../assets/stylus/settings/variables.styl"
+
+.panel
+  +has('header')
+    background-color: #eee
+    border-top-left-radius: .125rem
+    border-top-right-radius: .125rem
+    border-bottom: none
+    padding: .75rem 1rem
+    +variant('primary')
+      background-color: $primary
+    +variant('success')
+      background-color: $success
+    +variant('danger')
+      background-color: $danger
+    +variant('warning')
+      background-color: $warning
+    +variant('info')
+      background-color: $info
+    +variant('dark')
+      background-color: $blue_gray

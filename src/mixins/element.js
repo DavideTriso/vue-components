@@ -1,4 +1,4 @@
-import CSSUtil from './../utils/css';
+import CSSUtil from '../utils/css';
 import StyleMixin from './style';
 
 export default {
@@ -37,6 +37,7 @@ export default {
           this.contextualStyle
         )
       );
+
       return classes;
     },
   },

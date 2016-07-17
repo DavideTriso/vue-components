@@ -1,0 +1,18 @@
+@import "../../../assets/stylus/mixins/mixins.styl"
+@import "../../../assets/stylus/settings/variables.styl"
+
+.alert
+  +has('message')
+    display: block
+    +variant('primary')
+      color: $white
+    +variant('success')
+      color: $white
+    +variant('danger')
+      color: $white
+    +variant('warning')
+      color: $white
+    +variant('info')
+      color: $white
+    +variant('dark')
+      color: $white
