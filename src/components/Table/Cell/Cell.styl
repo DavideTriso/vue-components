@@ -2,11 +2,11 @@
 @import "./../../../assets/stylus/mixins/mixins.styl"
 @import "./../../../assets/stylus/settings/variables.styl"
 
-.Table
-  +has(cell) // Table__cell
+.table
+  +has('cell')
     padding: 1rem 1rem
     text-align: left
-    +variant(header)
+    +variant('header')
       color: $gray
       font-weight: 400
       &.Table__cell--primary
@@ -21,7 +21,7 @@
         color: $info
       &.Table__cell--dark
         color: $white
-    +variant(footer)
+    +variant('footer')
       color: $gray
       &.Table__cell--primary
         color: $primary

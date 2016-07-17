@@ -1,7 +1,7 @@
 @import "./../../assets/stylus/mixins/mixins.styl"
 @import "./../../assets/stylus/settings/variables.styl"
 
-.Alert // Alert
+.alert
   position: relative
   background-color: $white
   border-radius: .125rem
@@ -12,21 +12,21 @@
   padding: 1rem
   &:first-child
     margin-top: 0
-  +variant(primary) // Alert--primary
+  +variant('primary')
     background-color: $primary
     border-color: $primary
-  +variant(success) // Alert--success
+  +variant('success')
     background-color: $success
     border-color: $success
-  +variant(danger) // Alert--danger
+  +variant('danger')
     background-color: $danger
     border-color: $danger
-  +variant(warning) // Alert--warning
+  +variant('warning')
     background-color: $warning
     border-color: $warning
-  +variant(info) // Alert--info
+  +variant('info')
     background-color: $info
     border-color: $info
-  +variant(dark) // Alert--dark
+  +variant('dark')
     color: $white
     background-color: $blue_gray

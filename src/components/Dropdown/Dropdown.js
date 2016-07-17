@@ -1,6 +1,6 @@
 import BlockMixin from './../../mixins/block';
-import * as VButton from './../Button/Button.vue';
-import * as DropdownMenu from './Menu/Menu.vue';
+import * as VButton from './../button/button.vue';
+import * as DropdownMenu from './menu/menu.vue';
 
 export default {
   data() {
@@ -17,7 +17,7 @@ export default {
     };
 
     return {
-      block: 'Dropdown',
+      block: 'dropdown',
       button,
       isCollapsed: false,
     };

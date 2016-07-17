@@ -1,3 +1,3 @@
-<style src="./Header.styl" lang="stylus"></style>
-<template src="./Header.html"></template>
-<script src="./Header.js" lang="babel"></script>
+<style src="./header.styl" lang="stylus"></style>
+<template src="./header.html"></template>
+<script src="./header.js" lang="babel"></script>

@@ -1,10 +1,10 @@
 import BlockMixin from './../../mixins/block';
-import Icon from './../Icon/Icon.vue';
+import * as Icon from './../icon/icon.vue';
 
 export default {
   data() {
     return {
-      block: 'Button',
+      block: 'button',
     };
   },
 

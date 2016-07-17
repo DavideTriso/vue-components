@@ -1,6 +1,6 @@
 import ElementMixin from './../../../mixins/element';
-import * as ListImage from './../Image/Image.vue';
-import * as ListContent from './../Content/Content.vue';
+import * as ListImage from './../image/image.vue';
+import * as ListContent from './../content/content.vue';
 
 export default {
   data() {

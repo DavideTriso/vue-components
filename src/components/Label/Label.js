@@ -3,7 +3,7 @@ import BlockMixin from './../../mixins/block';
 export default {
   data() {
     return {
-      block: 'Label',
+      block: 'label',
     };
   },
 

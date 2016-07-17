@@ -2,7 +2,7 @@
 @import "./../../assets/stylus/settings/variables.styl"
 @import "./../../assets/stylus/mixins/mixins.styl"
 
-.Button // Button
+.button
   transition(100ms)
   border-radius: .125rem
   box-shadow: $box_shadow_minimum
@@ -16,37 +16,37 @@
   &:hover
     cursor: pointer
 
-  +variant(primary) // Button--primary
+  +variant('primary')
     background-color: $primary
     color: $white
     &:hover
       background-color: $primary_600
-  +variant(success) // Button--success
+  +variant('success')
     background-color: $success
     color: $white
     &:hover
       background-color: $success_600
-  +variant(danger) // Button--danger
+  +variant('danger')
     background-color: $danger
     color: $white
     &:hover
       background-color: $danger_600
-  +variant(warning) // Button--warning
+  +variant('warning')
     background-color: $warning
     color: $white
     &:hover
       background-color: $warning_600
-  +variant(info) // Button--info
+  +variant('info')
     background-color: $info
     color: $white
     &:hover
       background-color: $info_600
-  +variant(dark) // Button--dark
+  +variant('dark')
     background-color: $blue_gray
     color: $white
     &:hover
       background-color: $dark_blue_gray
-  +variant('block') // Button--block
+  +variant('block')
     display: block
     text-align: center
   +variant('dropdown')

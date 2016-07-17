@@ -1,10 +1,10 @@
 import BlockMixin from './../../mixins/block';
-import * as ListItem from './Item/Item.vue';
+import * as ListItem from './item/item.vue';
 
 export default {
   data() {
     return {
-      block: 'List',
+      block: 'list',
     };
   },
 

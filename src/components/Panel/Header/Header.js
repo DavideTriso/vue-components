@@ -1,5 +1,5 @@
 import ElementMixin from './../../../mixins/element';
-import * as PanelTitle from './../Title/Title.vue';
+import * as PanelTitle from './../title/title.vue';
 
 export default {
   data() {

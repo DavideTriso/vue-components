@@ -10,22 +10,22 @@
   }
 }
 
-.Alert
-  +has(timer) // Alert__timer
+.alert
+  +has('timer')
     animation: timer 5000ms infinite linear
     position: absolute
     top: 0
     left: 0
     height: .25rem
-    +variant(primary) // Alert__timer--primary
+    +variant('primary')
       background: $primary_dark
-    +variant(success) // Alert__timer--success
+    +variant('success')
       background: $success_dark
-    +variant(danger) // Alert__timer--danger
+    +variant('danger')
       background: $danger_dark
-    +variant(warning) // Alert__timer--warning
+    +variant('warning')
       background: $warning_dark
-    +variant(info) // Alert__timer--info
+    +variant('info')
       background: $info_dark
-    +variant(dark) // Alert__timer--dark
+    +variant('dark')
       background: $white

@@ -2,7 +2,7 @@
 @import "./../../assets/stylus/settings/variables.styl"
 @import "./../../assets/stylus/mixins/mixins.styl"
 
-.Label // Label
+.label
   transition(100ms)
   border-radius: .125rem
   box-shadow: $box_shadow_minimum
@@ -13,21 +13,21 @@
   margin: 0
   padding: .25rem
   text-decoration: none
-  +variant(primary) // Label--primary
+  +variant(primary)
     background-color: $primary
     color: $white
-  +variant(success) // Label--success
+  +variant(success)
     background-color: $success
     color: $white
-  +variant(danger) // Label--danger
+  +variant(danger)
     background-color: $danger
     color: $white
-  +variant(warning) // Label--warning
+  +variant(warning)
     background-color: $warning
     color: $white
-  +variant(info) // Label--info
+  +variant(info)
     background-color: $info
     color: $white
-  +variant(dark) // Label--dark
+  +variant(dark)
     background-color: $blue_gray
     color: $white

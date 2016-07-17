@@ -1,7 +1,7 @@
 @import "./../../assets/stylus/mixins/mixins.styl"
 @import "./../../assets/stylus/settings/variables.styl"
 
-.Progress // Progress
+.progress
   display: block
   border-radius: .125rem
   width: 100%
@@ -9,15 +9,15 @@
   background-color: $light_gray
   position: relative
   overflow: hidden
-  +variant(primary) // Progress--primary
+  +variant('primary')
     background-color: $primary_light
-  +variant(success) // Progress--success
+  +variant('success')
     background-color: $success_light
-  +variant(danger) // Progress--danger
+  +variant('danger')
     background-color: $danger_light
-  +variant(warning) // Progress--warning
+  +variant('warning')
     background-color: $warning_light
-  +variant(info) // Progress--info
+  +variant('info')
     background-color: $info_light
-  +variant(dark) // Progress--dark
+  +variant('dark')
     background-color: $light_blue_gray

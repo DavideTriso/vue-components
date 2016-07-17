@@ -2,7 +2,7 @@
 @import "./../../assets/stylus/settings/variables.styl"
 @import "./../../assets/stylus/mixins/mixins.styl"
 
-.Icon
+.icon
   display: inline-block
   font: normal normal normal 24px / 1 "Material Design Icons"
   font-size: inherit
@@ -15,6 +15,6 @@
 
 
 for $num in (1..length($materialDesignIconHexes))
-  .Icon--{$materialDesignIconNames[$num]}
+  .icon--{$materialDesignIconNames[$num]}
     &:before
       content: '\' + $materialDesignIconHexes[$num]

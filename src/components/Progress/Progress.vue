@@ -1,3 +1,3 @@
-<style src="./Progress.styl" lang="stylus"></style>
-<template src="./Progress.html"></template>
-<script src="./Progress.js" lang="babel"></script>
+<style src="./progress.styl" lang="stylus"></style>
+<template src="./progress.html"></template>
+<script src="./progress.js" lang="babel"></script>

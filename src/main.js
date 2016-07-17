@@ -1,12 +1,12 @@
-import * as Alert from './components/Alert/Alert.vue';
-import * as Breadcrumb from './components/Breadcrumb/Breadcrumb.vue';
-import * as Button from './components/Button/Button.vue';
-import * as Dropdown from './components/Dropdown/Dropdown.vue';
-import * as Label from './components/Label/Label.vue';
-import * as List from './components/List/List.vue';
-import * as Panel from './components/Panel/Panel.vue';
-import * as Progress from './components/Progress/Progress.vue';
-import * as Table from './components/Table/Table.vue';
+import * as Alert from './components/alert/alert.vue';
+import * as Breadcrumb from './components/breadcrumb/breadcrumb.vue';
+import * as Button from './components/button/button.vue';
+import * as Dropdown from './components/dropdown/dropdown.vue';
+import * as Label from './components/label/label.vue';
+import * as List from './components/list/list.vue';
+import * as Panel from './components/panel/panel.vue';
+import * as Progress from './components/progress/progress.vue';
+import * as Table from './components/table/table.vue';
 
 require('./assets/stylus/vue-components.styl');
 

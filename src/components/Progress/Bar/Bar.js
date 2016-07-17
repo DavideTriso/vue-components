@@ -13,6 +13,15 @@ export default {
       required: true,
     },
   },
+
+  computed: {
+    styling() {
+      return {
+        width: `${this.progress}%`,
+      };
+    },
+  },
+
   mixins: [
     ElementMixin,
   ],

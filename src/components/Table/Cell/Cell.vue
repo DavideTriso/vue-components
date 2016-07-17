@@ -1,3 +1,3 @@
-<style src="./Cell.styl" lang="stylus"></style>
-<template src="./Cell.html"></template>
-<script src="./Cell.js" lang="babel"></script>
+<style src="./cell.styl" lang="stylus"></style>
+<template src="./cell.html"></template>
+<script src="./cell.js" lang="babel"></script>

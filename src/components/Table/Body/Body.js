@@ -1,5 +1,5 @@
 import ElementMixin from './../../../mixins/element';
-import * as TableRow from './../Row/Row.vue';
+import * as TableRow from './../row/row.vue';
 
 export default {
   data() {

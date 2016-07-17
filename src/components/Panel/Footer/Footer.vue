@@ -1,3 +1,3 @@
-<style src="./Footer.styl" lang="stylus"></style>
-<template src="./Footer.html"></template>
-<script src="./Footer.js" lang="babel"></script>
+<style src="./footer.styl" lang="stylus"></style>
+<template src="./footer.html"></template>
+<script src="./footer.js" lang="babel"></script>

@@ -1,3 +1,3 @@
-<style src="./Body.styl" lang="stylus"></style>
-<template src="./Body.html"></template>
-<script src="./Body.js" lang="babel"></script>
+<style src="./body.styl" lang="stylus"></style>
+<template src="./body.html"></template>
+<script src="./body.js" lang="babel"></script>

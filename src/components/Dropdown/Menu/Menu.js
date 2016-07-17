@@ -1,5 +1,5 @@
 import ElementMixin from './../../../mixins/element';
-import * as DropdownItem from './../Item/Item.vue';
+import * as DropdownItem from './../item/item.vue';
 
 export default {
   data() {

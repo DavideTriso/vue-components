@@ -2,22 +2,22 @@
 @import "./../../../assets/stylus/mixins/mixins.styl"
 @import "./../../../assets/stylus/settings/variables.styl"
 
-.Panel
-  +has(header) // Panel__header
+.panel
+  +has('header')
     background-color: #eee
     border-top-left-radius: .125rem
     border-top-right-radius: .125rem
     border-bottom: none
     padding: .75rem 1rem
-    +variant(primary) // Panel__header--primary
+    +variant('primary')
       background-color: $primary
-    +variant(success) // Panel__header--success
+    +variant('success')
       background-color: $success
-    +variant(danger) // Panel__header--danger
+    +variant('danger')
       background-color: $danger
-    +variant(warning) // Panel__header--warning
+    +variant('warning')
       background-color: $warning
-    +variant(info) // Panel__header--info
+    +variant('info')
       background-color: $info
-    +variant(dark) // Panel__header--dark
+    +variant('dark')
       background-color: $blue_gray

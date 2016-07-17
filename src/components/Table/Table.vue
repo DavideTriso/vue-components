@@ -1,3 +1,3 @@
-<style src="./Table.styl" lang="stylus"></style>
-<template src="./Table.html"></template>
-<script src="./Table.js" lang="babel"></script>
+<style src="./table.styl" lang="stylus"></style>
+<template src="./table.html"></template>
+<script src="./table.js" lang="babel"></script>

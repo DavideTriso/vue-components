@@ -1,7 +1,7 @@
 @import "./../../../assets/stylus/mixins/mixins.styl"
 @import "./../../../assets/stylus/settings/variables.styl"
 
-.Progress // Progress__bar
+.progress
   +has('bar')
     transition(500ms)
     display: block
@@ -14,15 +14,15 @@
     line-height: 1.5rem
     text-align: center
     overflow: hidden
-    +variant(primary) // Progress__bar--primary
+    +variant('primary')
       background-color: $primary
-    +variant(success) // Progress__bar--success
+    +variant('success')
       background-color: $success
-    +variant(danger) // Progress__bar--danger
+    +variant('danger')
       background-color: $danger
-    +variant(warning) // Progress__bar--warning
+    +variant('warning')
       background-color: $warning
-    +variant(info) // Progress__bar--info
+    +variant('info')
       background-color: $info
-    +variant(dark) // Progress__bar--dark
+    +variant('dark')
       background-color: $dark_blue_gray

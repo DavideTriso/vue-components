@@ -1,6 +1,6 @@
 import CSSUtil from './../../../utils/css';
 import ElementMixin from './../../../mixins/element';
-import * as TableCell from './../Cell/Cell.vue';
+import * as TableCell from './../cell/cell.vue';
 
 export default {
   data() {

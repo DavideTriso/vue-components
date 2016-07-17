@@ -1,3 +1,3 @@
-<style src="./Link.styl" lang="stylus"></style>
-<template src="./Link.html"></template>
-<script src="./Link.js" lang="babel"></script>
+<style src="./link.styl" lang="stylus"></style>
+<template src="./link.html"></template>
+<script src="./link.js" lang="babel"></script>

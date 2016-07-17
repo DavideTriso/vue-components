@@ -2,34 +2,34 @@
 @import "./../../../assets/stylus/settings/variables.styl"
 @import "./../../../assets/stylus/mixins/mixins.styl"
 
-.Breadcrumb
-  +has(link) // Breadcrumb__link
+.breadcrumb
+  +has('link')
     transition(100ms)
     color: $dark_blue_gray
     display: inline-block
     vertical-align: middle
     text-decoration: none
-    +variant(primary) // Breadcrumb__link--primary
+    +variant('primary')
       color: $primary
       &:hover
         color: $primary_dark
-    +variant(success) // Breadcrumb__link--success
+    +variant('success')
       color: $success
       &:hover
         color: $success_dark
-    +variant(danger) // Breadcrumb__link--danger
+    +variant('danger')
       color: $danger
       &:hover
         color: $danger_dark
-    +variant(warning) // Breadcrumb__link--warning
+    +variant('warning')
       color: $warning
       &:hover
         color: $warning_dark
-    +variant(info) // Breadcrumb__link--info
+    +variant('info')
       color: $info
       &:hover
         color: $info_dark
-    +variant(dark) // Breadcrumb__link--dark
+    +variant('dark')
       color: $blue_gray
       &:hover
         color: $dark_blue_gray

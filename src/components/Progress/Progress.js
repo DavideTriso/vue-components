@@ -1,10 +1,10 @@
 import BlockMixin from './../../mixins/block';
-import * as ProgressBar from './Bar/Bar.vue';
+import * as ProgressBar from './bar/bar.vue';
 
 export default {
   data() {
     return {
-      block: 'Progress',
+      block: 'progress',
     };
   },
 

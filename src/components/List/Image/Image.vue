@@ -1,3 +1,3 @@
-<style src="./Image.styl" lang="stylus"></style>
-<template src="./Image.html"></template>
-<script src="./Image.js" lang="babel"></script>
+<style src="./image.styl" lang="stylus"></style>
+<template src="./image.html"></template>
+<script src="./image.js" lang="babel"></script>

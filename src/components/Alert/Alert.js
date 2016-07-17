@@ -1,13 +1,13 @@
 import BlockMixin from './../../mixins/block';
-import * as AlertCloseButton from './CloseButton/CloseButton.vue';
-import * as AlertMessage from './Message/Message.vue';
-import * as AlertTimer from './Timer/Timer.vue';
-import * as AlertTitle from './Title/Title.vue';
+import * as AlertCloseButton from './close-button/close-button.vue';
+import * as AlertMessage from './message/message.vue';
+import * as AlertTimer from './timer/timer.vue';
+import * as AlertTitle from './title/title.vue';
 
 export default {
   data() {
     return {
-      block: 'Alert',
+      block: 'alert',
     };
   },
 

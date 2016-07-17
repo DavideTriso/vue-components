@@ -1,3 +1,3 @@
-<style src="./Menu.styl" lang="stylus"></style>
-<template src="./Menu.html"></template>
-<script src="./Menu.js" lang="babel"></script>
+<style src="./menu.styl" lang="stylus"></style>
+<template src="./menu.html"></template>
+<script src="./menu.js" lang="babel"></script>

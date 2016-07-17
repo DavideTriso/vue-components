@@ -1,3 +1,3 @@
-<style src="./Bar.styl" lang="stylus"></style>
-<template src="./Bar.html"></template>
-<script src="./Bar.js" lang="babel"></script>
+<style src="./bar.styl" lang="stylus"></style>
+<template src="./bar.html"></template>
+<script src="./bar.js" lang="babel"></script>

@@ -1,12 +1,12 @@
 import BlockMixin from './../../mixins/block';
-import * as TableBody from './Body/Body.vue';
-import * as TableHeader from './Header/Header.vue';
-import * as TableFooter from './Footer/Footer.vue';
+import * as TableBody from './body/body.vue';
+import * as TableHeader from './header/header.vue';
+import * as TableFooter from './footer/footer.vue';
 
 export default {
   data() {
     return {
-      block: 'Table',
+      block: 'table',
     };
   },
 
