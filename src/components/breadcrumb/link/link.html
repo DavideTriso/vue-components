@@ -1,0 +1,15 @@
+<a
+  v-if="vueRouter"
+  :class="classNames"
+  v-link="to"
+>
+  {{content}}
+</a>
+
+<a
+  v-else
+  :class="classNames"
+  :href="to"
+>
+  {{content}}
+</a>

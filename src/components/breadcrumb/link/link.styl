@@ -1,0 +1,35 @@
+// Imports
+@import "../../../assets/stylus/settings/variables.styl"
+@import "../../../assets/stylus/mixins/mixins.styl"
+
+.breadcrumb
+  +has('link')
+    transition(100ms)
+    color: $dark_blue_gray
+    display: inline-block
+    vertical-align: middle
+    text-decoration: none
+    +variant('primary')
+      color: $primary
+      &:hover
+        color: $primary_dark
+    +variant('success')
+      color: $success
+      &:hover
+        color: $success_dark
+    +variant('danger')
+      color: $danger
+      &:hover
+        color: $danger_dark
+    +variant('warning')
+      color: $warning
+      &:hover
+        color: $warning_dark
+    +variant('info')
+      color: $info
+      &:hover
+        color: $info_dark
+    +variant('dark')
+      color: $blue_gray
+      &:hover
+        color: $dark_blue_gray

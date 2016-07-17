@@ -1,0 +1,14 @@
+// Imports
+@import "../../../assets/stylus/settings/variables.styl"
+@import "../../../assets/stylus/mixins/mixins.styl"
+
+.dropdown
+  +has('item')
+    transition(100ms)
+    cursor: pointer
+    text-decoration: none
+    list-style: none
+    padding: .5rem 1rem
+    margin: 0
+    &:hover
+      background-color: $light_blue_gray
