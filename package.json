@@ -3,8 +3,12 @@
   "version": "1.0.2",
   "description": "Vue Components",
   "main": "dist/index.js",
+  "scripts": {
+    "build": "NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
+    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs",
+    "prepublish": "npm run build"
+  },
   "author": "Peter van Meijgaard <peter@vivid-websolutions.nl>",
-  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/vivid-web/vue-components.git"
@@ -24,21 +28,7 @@
     "front-end",
     "frontend"
   ],
-  "directories": {
-    "src": "src/"
-  },
-  "files": [
-    "LICENSE",
-    "README.md",
-    "src",
-    "dist"
-  ],
   "license": "MIT",
-  "scripts": {
-    "dev": "node build/dev-server.js",
-    "build": "NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
-    "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
-  },
   "dependencies": {
     "vue": "^1.0.21"
   },
