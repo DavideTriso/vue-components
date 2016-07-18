@@ -2,7 +2,7 @@
   "name": "vue-components",
   "version": "1.0.2",
   "description": "Vue Components",
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "author": "Peter van Meijgaard <peter@vivid-websolutions.nl>",
   "private": false,
   "repository": {
@@ -30,7 +30,6 @@
   "files": [
     "LICENSE",
     "README.md",
-    "CHANGELOG.md",
     "src",
     "dist"
   ],

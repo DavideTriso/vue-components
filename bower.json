@@ -1,7 +1,7 @@
 {
   "name": "vue-components",
   "description": "Vue Components",
-  "main": "src/components",
+  "main": "dist/index.js",
   "authors": [
     "Peter van Meijgaard <peter@vivid-websolutions.nl>"
   ],
@@ -18,7 +18,8 @@
     "ES6",
     "babel",
     "front-end",
-    "frontend"
+    "frontend",
+    "vue-components"
   ],
   "moduleType": [
     "amd",
@@ -32,9 +33,11 @@
     "node_modules",
     "bower_components",
     "test",
-    "tests"
+    "tests",
+    "src",
+    "build"
   ],
-  "dependencies": {
+  "devDependencies": {
     "normalize.styl": "latest"
   }
 }
