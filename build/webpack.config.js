@@ -2,15 +2,14 @@ var webpack = require('webpack')
 var path = require('path')
 
 module.exports = {
-  entry: './src/main.js',
+  entry: './src/index.js',
   output: {
     path: './dist/',
-    filename: '[name].js',
+    filename: 'index.js',
     library: 'VueComponents',
     libraryTarget: 'umd'
   },
   resolve: {
-    root: './lol/lol',
     modulesDirectories: ['node_modules', './src'],
   },
   module: {
@@ -33,17 +32,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url',
-        query: {
-          name: 'img/[name].[ext]'
-        }
+        loader: 'url'
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url',
-        query: {
-          name: 'fonts/[name].[ext]'
-        }
+        loader: 'url'
       }
     ]
   },
