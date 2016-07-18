@@ -4,24 +4,14 @@ var path = require('path')
 module.exports = {
   entry: './src/main.js',
   output: {
-    path: './dist',
-    publicPath: '/dist/',
+    path: './dist/',
     filename: '[name].js',
     library: 'VueComponents',
     libraryTarget: 'umd'
   },
-  devServer: {
-    stats: {
-      children: false,
-      chunks: false
-    }
-  },
-  stats: {
-    children: false,
-    chunks: false
-  },
   resolve: {
-    root: path.resolve('./lol/lol')
+    root: './lol/lol',
+    modulesDirectories: ['node_modules', './src'],
   },
   module: {
     loaders: [
@@ -45,7 +35,6 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url',
         query: {
-          limit: 10000,
           name: 'img/[name].[ext]'
         }
       },
@@ -53,7 +42,6 @@ module.exports = {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
         loader: 'url',
         query: {
-          limit: 10000,
           name: 'fonts/[name].[ext]'
         }
       }
