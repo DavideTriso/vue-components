@@ -1,25 +1,5 @@
 @import "./../../../assets/stylus/helpers/spa-imports.styl"
 
-@keyframes fadeInDown {
-  from {
-    transform: translate3d(-15rem, 0, 0)
-  }
-
-  to {
-    transform: none
-  }
-}
-
-@keyframes fadeOutUp {
-  from {
-  }
-
-  to {
-    transform: translate3d(-15rem, 0, 0)
-  }
-}
-
-
 .nav
   +has('side')
     top: 4rem
@@ -32,6 +12,6 @@
     padding: 1rem
     z-index: 999
     +variant('expand-enter')
-      animation: fadeInDown .5s ease
+      animation: slideInLeft .5s ease
     +variant('expand-leave')
-      animation: fadeOutUp .5s ease
+      animation: slideOutLeft .5s ease
