@@ -1,12 +1,15 @@
 <li
   :class="classNames"
 >
+
   <list-image
     v-if="hasImage"
     :image="image"
     :title="content"
   ></list-image>
+
   <list-content
     :content="content"
   ></list-content>
+
 </li>

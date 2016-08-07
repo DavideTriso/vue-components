@@ -1,4 +1,7 @@
-<ul :class="classNames">
+<ul
+  :class="classNames"
+>
+
   <breadcrumb-item
     v-for="item in items"
     :body="item.body"
@@ -6,4 +9,5 @@
     :variants="elementVariants('variants')"
     :contextual-style="elementContextualStyle('item')"
   ></breadcrumb-item>
+
 </ul>

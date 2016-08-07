@@ -1,6 +1,10 @@
 import ElementMixin from '../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
       element: 'link',
@@ -32,8 +36,4 @@ export default {
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

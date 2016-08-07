@@ -1,4 +1,7 @@
-<div :class="classNames">
+<div
+  :class="classNames"
+>
+
   <breadcrumb-link
     v-if="hasLink"
     :content="elementContent('body')"
@@ -14,4 +17,5 @@
     :variants="elementVariants('body')"
     :contextual-style="elementContextualStyle('body')"
   ></breadcrumb-content>
+
 </div>

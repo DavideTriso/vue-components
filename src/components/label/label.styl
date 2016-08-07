@@ -4,7 +4,7 @@
   transition(100ms)
   border-radius: .125rem
   box-shadow: $box_shadow_minimum
-  color: $black
+  color: palette('Black')
   display: inline-block
   font-size: .875rem
   font-weight: 300
@@ -12,20 +12,20 @@
   padding: .25rem
   text-decoration: none
   +variant(primary)
-    background-color: $primary
-    color: $white
+    background-color: palette('Blue')
+    color: palette('White')
   +variant(success)
-    background-color: $success
-    color: $white
+    background-color: palette('Green')
+    color: palette('White')
   +variant(danger)
-    background-color: $danger
-    color: $white
+    background-color: palette('Red')
+    color: palette('White')
   +variant(warning)
-    background-color: $warning
-    color: $white
+    background-color: palette('Orange')
+    color: palette('White')
   +variant(info)
-    background-color: $info
-    color: $white
+    background-color: palette('Light Blue')
+    color: palette('White')
   +variant(dark)
-    background-color: $blue_gray
-    color: $white
+    background-color: palette('Blue Grey', '800')
+    color: palette('White')

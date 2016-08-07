@@ -1,6 +1,10 @@
 import ElementMixin from '../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
       element: 'content',
@@ -16,8 +20,4 @@ export default {
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

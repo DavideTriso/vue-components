@@ -3,6 +3,10 @@ import * as ListImage from '../image/image.vue';
 import * as ListContent from '../content/content.vue';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
       element: 'item',
@@ -45,8 +49,4 @@ export default {
     ListImage,
     ListContent,
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

@@ -65,5 +65,25 @@ export default {
 
       return undefined;
     },
+
+    propOptional(element, key) {
+      if (typeof element === 'string') {
+        return element;
+      }
+
+      if (element[key]) {
+        return element[key];
+      }
+
+      return undefined;
+    },
+
+    elementOptional(element, key) {
+      if (element[key]) {
+        return element[key];
+      }
+
+      return undefined;
+    },
   },
 };

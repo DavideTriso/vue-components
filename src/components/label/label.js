@@ -1,6 +1,13 @@
-import BlockMixin from '../../mixins/block';
+import DebugUtil from './../../utils/debug';
+import BlockMixin from './../../mixins/block';
+import SlotMixin from './../../mixins/slot';
 
 export default {
+  mixins: [
+    BlockMixin,
+    SlotMixin,
+  ],
+
   data() {
     return {
       block: 'label',
@@ -13,11 +20,19 @@ export default {
      */
     content: {
       type: String,
-      required: true,
+      required: false,
     },
   },
 
-  mixins: [
-    BlockMixin,
-  ],
+  computed: {
+    isValid() {
+      return !!this.hasSlot('default') || this.content;
+    },
+  },
+
+  ready() {
+    if (!this.isValid) {
+      DebugUtil.warningMessage('No content!', this.$el);
+    }
+  },
 };

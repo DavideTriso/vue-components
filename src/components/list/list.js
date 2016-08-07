@@ -2,6 +2,10 @@ import BlockMixin from '../../mixins/block';
 import * as ListItem from './item/item.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+  ],
+
   data() {
     return {
       block: 'list',
@@ -18,10 +22,6 @@ export default {
       required: true,
     },
   },
-
-  mixins: [
-    BlockMixin,
-  ],
 
   components: {
     ListItem,
