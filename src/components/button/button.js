@@ -1,7 +1,14 @@
-import BlockMixin from '../../mixins/block';
-import * as Icon from '../icon/icon.vue';
+// import DebugUtil from './../../utils/debug';
+import BlockMixin from './../../mixins/block';
+import SlotMixin from './../../mixins/slot';
+import * as Icon from './../icon/icon.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+    SlotMixin,
+  ],
+
   data() {
     return {
       block: 'button',
@@ -14,15 +21,14 @@ export default {
      */
     content: {
       type: String,
-      required: true,
+      required: false,
     },
 
     /**
      * The button link
      */
-    link: {
-      type: Object,
-      required: true,
+    action: {
+      required: false,
     },
 
     /**
@@ -34,39 +40,23 @@ export default {
     },
   },
 
-  mixins: [
-    BlockMixin,
-  ],
-
   computed: {
-    /**
-     * Computed property which will output if
-     * the button has a link
-     *
-     * @returns {boolean}
-     */
-    hasLink() {
-      // Check when the property link isn't set
-      if (!this.link) {
-        return false;
-      }
-
-      return !!this.link.to && !this.link.action;
+    isFunction() {
+      return typeof this.action === 'function';
     },
 
-    /**
-     * Computed property which will output if
-     * the button has an action
-     *
-     * @returns {boolean}
-     */
-    hasAction() {
-      // Check when the property link isn't set
-      if (!this.link) {
-        return false;
+    isLink() {
+      return typeof this.action === 'string';
+    },
+
+    isVueRouter() {
+      if (typeof this.action === 'object') {
+        if (this.action.vueRouter) {
+          return true;
+        }
       }
 
-      return !!this.link.action && !this.link.to;
+      return false;
     },
 
     /**
@@ -75,8 +65,26 @@ export default {
      *
      * @returns {boolean}
      */
+    isDefault() {
+      let isDefault = true;
+
+      if (this.isLink) {
+        isDefault = false;
+      }
+
+      if (this.isFunction) {
+        isDefault = false;
+      }
+
+      if (this.isVueRouter) {
+        isDefault = false;
+      }
+
+      return isDefault;
+    },
+
     isValid() {
-      return !(!this.hasAction && !this.hasLink);
+      return !!(this.hasSlot('default') || this.content);
     },
 
     /**
@@ -93,7 +101,8 @@ export default {
   created() {
     // Check if the button is valid
     if (!this.isValid) {
-      console.warn('Warning: The button contains an action and a link. It cannot have both!');
+      // todo: Find out why this doesn't work on default slot
+      // DebugUtil.warningMessage('The button does not contain any content');
     }
   },
 

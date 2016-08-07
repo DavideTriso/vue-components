@@ -1,9 +1,11 @@
 <a
-  v-if="hasLink && !link.vueRouter"
+  v-if="isLink"
   :class="classNames"
-  :href="link.to"
+  :href="action"
 >
-  {{content}}
+  <slot>
+    {{content}}
+  </slot>
   <icon
     v-if="hasIcon"
     :variants="[icon.variants, 'button']"
@@ -11,11 +13,13 @@
 </a>
 
 <a
-  v-if="hasLink && link.vueRouter"
+  v-if="isVueRouter"
   :class="classNames"
-  v-link="link.to"
+  v-link="action.to"
 >
-  {{content}}
+  <slot>
+    {{content}}
+  </slot>
   <icon
     v-if="hasIcon"
     :variants="[icon.variants, 'button']"
@@ -23,13 +27,28 @@
 </a>
 
 <a
-  v-if="hasAction"
+  v-if="isFunction"
   :class="classNames"
-  @click.prevent="link.action"
+  @click.prevent="action"
 >
-  {{content}}
+  <slot>
+    {{content}}
+  </slot>
   <icon
     v-if="hasIcon"
     :variants="[icon.variants, 'button']"
   ></icon>
 </a>
+
+<button
+  v-if="isDefault"
+  :class="classNames"
+>
+  <slot>
+    {{content}}
+  </slot>
+  <icon
+    v-if="hasIcon"
+    :variants="[icon.variants, 'button']"
+  ></icon>
+</button>
