@@ -1,3 +1,4 @@
+// ToDo: refactor
 import BlockMixin from '../../mixins/block';
 import * as TableBody from './body/body.vue';
 import * as TableHeader from './header/header.vue';

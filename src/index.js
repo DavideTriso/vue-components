@@ -5,6 +5,7 @@ import * as VDropdown from './components/dropdown/dropdown.vue';
 import * as VIcon from './components/icon/icon.vue';
 import * as VLabel from './components/label/label.vue';
 import * as VList from './components/list/list.vue';
+import * as VNav from './components/nav/nav.vue';
 import * as VPanel from './components/panel/panel.vue';
 import * as VProgress from './components/progress/progress.vue';
 import * as VTable from './components/table/table.vue';
@@ -19,6 +20,7 @@ export const components = {
   VIcon,
   VLabel,
   VList,
+  VNav,
   VPanel,
   VProgress,
   VTable,
@@ -41,6 +43,7 @@ export {
   VIcon,
   VLabel,
   VList,
+  VNav,
   VPanel,
   VProgress,
   VTable,
