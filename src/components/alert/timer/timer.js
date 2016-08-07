@@ -1,6 +1,10 @@
 import ElementMixin from '../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
       element: 'timer',
@@ -17,10 +21,6 @@ export default {
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 
   methods: {
     /**

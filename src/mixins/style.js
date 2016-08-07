@@ -15,5 +15,13 @@ export default {
       type: String,
       required: false,
     },
+
+    /**
+     * The class
+     */
+    class: {
+      type: String,
+      required: false,
+    },
   },
 };

@@ -1,16 +1,3 @@
-// Importing from settings.json
-$config = json('./../../../config.json', { hash: true, leave-strings: true })
-
-if $config.element_separator
-  $element_separator = $config.element_separator
-else
-  $element_separator = '__';
-
-if $config.modifier_separator
-  $modifier_separator = $config.modifier_separator
-else
-  $modifier_separator = '--';
-
 // Rem default
 $rem_default = 16px
 

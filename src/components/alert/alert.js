@@ -1,10 +1,17 @@
-import BlockMixin from '../../mixins/block';
+import BlockMixin from './../../mixins/block';
+import SlotMixin from './../../mixins/slot';
+import DebugUtil from './../../utils/debug';
 import * as AlertCloseButton from './close-button/close-button.vue';
 import * as AlertMessage from './message/message.vue';
 import * as AlertTimer from './timer/timer.vue';
 import * as AlertTitle from './title/title.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+    SlotMixin,
+  ],
+
   data() {
     return {
       block: 'alert',
@@ -16,7 +23,6 @@ export default {
      * The close button of the alert
      */
     closeButton: {
-      type: Object,
       required: false,
     },
 
@@ -24,7 +30,6 @@ export default {
      * The timer of the alert
      */
     timer: {
-      type: Object,
       required: false,
     },
 
@@ -32,7 +37,6 @@ export default {
      * The title of the alert
      */
     title: {
-      type: Object,
       required: false,
     },
 
@@ -40,25 +44,15 @@ export default {
      * The message of the alert
      */
     message: {
-      type: Object,
       required: false,
     },
   },
 
-  mixins: [
-    BlockMixin,
-  ],
-
   components: {
     /**
-     * The alert dismiss button
+     * The alert close button
      */
     AlertCloseButton,
-
-    /**
-     * The alert message
-     */
-    AlertMessage,
 
     /**
      * The alert timer
@@ -66,7 +60,12 @@ export default {
     AlertTimer,
 
     /**
-     * The alert timer
+     * The alert message
+     */
+    AlertMessage,
+
+    /**
+     * The alert title
      */
     AlertTitle,
   },
@@ -79,7 +78,7 @@ export default {
      * @returns {boolean} If there is a title
      */
     hasTitle() {
-      return !!this.title;
+      return !!(this.title || this.hasSlot('title'));
     },
 
     /**
@@ -89,7 +88,7 @@ export default {
      * @returns {boolean} If there is a message
      */
     hasMessage() {
-      return !!this.message;
+      return !!(this.message || this.hasSlot('message'));
     },
 
     /**
@@ -101,6 +100,10 @@ export default {
     hasCloseButton() {
       if (!this.closeButton) {
         return false;
+      }
+
+      if (typeof this.closeButton === 'boolean') {
+        return true;
       }
 
       return !!this.closeButton.enabled;
@@ -117,17 +120,32 @@ export default {
         return false;
       }
 
+      if (typeof this.timer === 'boolean') {
+        return true;
+      }
+
       return this.timer.enabled;
     },
 
     /**
-     * If the alerts can be closed
+     * Computed property which will output
+     * whether the alert can be closed
      *
-     * @returns {boolean}
+     * @returns {boolean} If the alert can be closed
      */
     isClosable() {
       return !!(this.hasTimer || this.hasCloseButton);
     },
+
+    /**
+     * Computed property which will output
+     * whether the alert has content
+     *
+     * @returns {boolean} If the alert has content
+     */
+    hasContent() {
+      return !!(this.hasTitle || this.hasMessage);
+    }
   },
 
   methods: {
@@ -143,7 +161,12 @@ export default {
   ready() {
     // Check if the alert can be closed
     if (!this.isClosable) {
-      console.warn('Warning: Cannot close the alert!');
+      DebugUtil.warningMessage('Cannot close the alert!', this.$el);
+    }
+
+    // Check if the alert has content
+    if(!this.hasContent) {
+      DebugUtil.warningMessage('The alert has no content', this.$el);
     }
   },
 };

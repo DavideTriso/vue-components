@@ -1,30 +1,44 @@
-<div :class="classNames">
+<div
+  :class="classNames"
+>
 
   <alert-timer
     v-if="hasTimer"
-    :variants="timer.variants"
-    :contextual-style="timer.contextualStyle"
+    :variants="elementVariants('variants')"
+    :contextual-style="elementContextualStyle('timer')"
     :close-function="closeAlert"
   ></alert-timer>
 
   <alert-title
     v-if="hasTitle"
-    :variants="title.variants"
-    :contextual-style="title.contextualStyle"
-    :content="title.content"
-  ></alert-title>
+    :variants="elementVariants('title')"
+    :contextual-style="elementContextualStyle('title')"
+    :content="elementContent('title')"
+  >
+    <slot
+      name="title"
+      slot="title"
+      v-if="hasSlot('title')"
+    ></slot>
+  </alert-title>
 
   <alert-message
     v-if="hasMessage"
-    :variants="message.variants"
-    :contextual-style="message.contextualStyle"
-    :content="message.content"
-  ></alert-message>
+    :variants="elementVariants('message')"
+    :contextual-style="elementContextualStyle('message')"
+    :content="elementContent('message')"
+  >
+    <slot
+      name="message"
+      slot="message"
+      v-if="hasSlot('message')"
+    ></slot>
+  </alert-message>
 
   <alert-close-button
     v-if="hasCloseButton"
-    :variants="closeButton.variants"
-    :contextual-style="closeButton.contextualStyle"
+    :variants="elementVariants('closeButton')"
+    :contextual-style="elementContextualStyle('closeButton')"
     :close-function="closeAlert"
   ></alert-close-button>
 

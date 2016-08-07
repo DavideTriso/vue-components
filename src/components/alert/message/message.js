@@ -1,6 +1,12 @@
-import ElementMixin from '../../../mixins/element';
+import SlotMixin from './../../../mixins/slot';
+import ElementMixin from './../../../mixins/element';
 
 export default {
+  mixins: [
+    SlotMixin,
+    ElementMixin,
+  ],
+
   data() {
     return {
       element: 'message',
@@ -13,11 +19,7 @@ export default {
      */
     content: {
       type: String,
-      required: true,
+      required: false,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

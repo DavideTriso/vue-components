@@ -1,3 +1,9 @@
-<span :class="classNames">
-		{{content}}
+<span
+  :class="classNames"
+>
+  <slot
+    name="title"
+  >
+    {{content}}
+  </slot>
 </span>
