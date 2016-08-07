@@ -7,13 +7,16 @@ export default {
 
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'title',
     };
   },
 
   props: {
     /**
-     * The message content
+     * Title content
      */
     content: {
       type: String,

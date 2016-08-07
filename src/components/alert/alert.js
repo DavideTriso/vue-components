@@ -14,34 +14,37 @@ export default {
 
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'alert',
     };
   },
 
   props: {
     /**
-     * The close button of the alert
+     * Close button of the alert
      */
     closeButton: {
       required: false,
     },
 
     /**
-     * The timer of the alert
+     * Timer of the alert
      */
     timer: {
       required: false,
     },
 
     /**
-     * The title of the alert
+     * Title of the alert
      */
     title: {
       required: false,
     },
 
     /**
-     * The message of the alert
+     * Message of the alert
      */
     message: {
       required: false,
@@ -49,53 +52,38 @@ export default {
   },
 
   components: {
-    /**
-     * The alert close button
-     */
     AlertCloseButton,
-
-    /**
-     * The alert timer
-     */
     AlertTimer,
-
-    /**
-     * The alert message
-     */
     AlertMessage,
-
-    /**
-     * The alert title
-     */
     AlertTitle,
   },
 
   computed: {
     /**
      * Computed property which will output
-     * whether there is a title or not
+     * whether the alert has a title or not
      *
-     * @returns {boolean} If there is a title
+     * @returns {boolean} If the alert has a title
      */
     hasTitle() {
-      return !!(this.title || this.hasSlot('title'));
+      return this.title || this.hasSlot('title');
     },
 
     /**
      * Computed property which will output
-     * whether there is a message or not
+     * whether the alert has a message or not
      *
-     * @returns {boolean} If there is a message
+     * @returns {boolean} If the alert has a message
      */
     hasMessage() {
-      return !!(this.message || this.hasSlot('message'));
+      return this.message || this.hasSlot('message');
     },
 
     /**
      * Computed property which will output
-     * whether there is a close button or not
+     * whether the alert has a close button or not
      *
-     * @returns {boolean} If there is a close button
+     * @returns {boolean} If the alert has a close button
      */
     hasCloseButton() {
       if (!this.closeButton) {
@@ -106,14 +94,14 @@ export default {
         return true;
       }
 
-      return !!this.closeButton.enabled;
+      return this.closeButton.enabled;
     },
 
     /**
      * Computed property which will output
-     * whether there is a timer or not
+     * whether the alert has a timer or not
      *
-     * @returns {boolean} If there is a timer
+     * @returns {boolean} If the alert has a timer
      */
     hasTimer() {
       if (!this.timer) {
@@ -134,7 +122,7 @@ export default {
      * @returns {boolean} If the alert can be closed
      */
     isClosable() {
-      return !!(this.hasTimer || this.hasCloseButton);
+      return this.hasTimer || this.hasCloseButton;
     },
 
     /**
@@ -144,8 +132,8 @@ export default {
      * @returns {boolean} If the alert has content
      */
     hasContent() {
-      return !!(this.hasTitle || this.hasMessage);
-    }
+      return this.hasTitle || this.hasMessage;
+    },
   },
 
   methods: {

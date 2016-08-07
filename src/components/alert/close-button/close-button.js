@@ -7,13 +7,16 @@ export default {
 
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'close-button',
     };
   },
 
   props: {
     /**
-     * The function to close the notification
+     * Function to close the alert
      */
     closeFunction: {
       type: Function,

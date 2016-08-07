@@ -7,14 +7,21 @@ export default {
 
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'timer',
+
+      /**
+       * Timer holder
+       */
       timer: null,
     };
   },
 
   props: {
     /**
-     * The function to close the notification
+     * Function used to close the alert
      */
     closeFunction: {
       type: Function,
@@ -24,7 +31,7 @@ export default {
 
   methods: {
     /**
-     * Method used to start the timer
+     * Function to start the timer
      */
     startTimer() {
       this.timer = setTimeout(this.closeFunction, 5000);
