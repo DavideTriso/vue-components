@@ -1,23 +1,26 @@
 import ElementMixin from '../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'content',
     };
   },
 
   props: {
     /**
-     * The text to be displayed
+     * Breadcrumb item content
      */
     content: {
       type: String,
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

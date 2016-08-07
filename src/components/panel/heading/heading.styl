@@ -1,0 +1,22 @@
+@import "./../../../assets/stylus/helpers/spa-imports.styl"
+
+.panel
+  +has('heading')
+    background-color: #fff
+    color: palette('White')
+    border-top-left-radius: .125rem
+    border-top-right-radius: .125rem
+    border-bottom: none
+    padding: .75rem 1rem
+    +variant('primary')
+      background-color: palette('Blue')
+    +variant('success')
+      background-color: palette('Green')
+    +variant('danger')
+      background-color: palette('Red')
+    +variant('warning')
+      background-color: palette('Orange')
+    +variant('info')
+      background-color: palette('Light Blue')
+    +variant('dark')
+      background-color: palette('Blue Grey', '800')

@@ -2,15 +2,22 @@ import BlockMixin from '../../mixins/block';
 import * as BreadcrumbItem from './item/item.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'breadcrumb',
     };
   },
 
   props: {
     /**
-     * The breadcrumb items
+     * Breadcrumb items
      */
     items: {
       type: Array,
@@ -18,14 +25,7 @@ export default {
     },
   },
 
-  mixins: [
-    BlockMixin,
-  ],
-
   components: {
-    /**
-     * The displayed breadcrumb item
-     */
     BreadcrumbItem,
   },
 };

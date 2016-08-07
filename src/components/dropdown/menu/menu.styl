@@ -1,6 +1,4 @@
-// Imports
-@import "../../../assets/stylus/settings/variables.styl"
-@import "../../../assets/stylus/mixins/mixins.styl"
+@import "./../../../assets/stylus/helpers/spa-imports.styl"
 
 @keyframes fadeInDown {
   from {
@@ -27,7 +25,7 @@
 
 .dropdown
   +has('menu')
-    background-color: $white
+    background-color: palette('White')
     border-radius: .125rem
     box-shadow: $box_shadow_minimum
     padding: 0

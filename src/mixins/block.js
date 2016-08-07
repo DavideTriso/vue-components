@@ -15,7 +15,14 @@ export default {
      */
     classNames() {
       const classes = CSSUtil.blockClasses(this.block, this.variants);
-      classes.push(CSSUtil.contextualClass(this.block, this.contextualStyle));
+
+      if (this.contextualStyle) {
+        classes.push(CSSUtil.contextualClass(this.block, this.contextualStyle));
+      }
+
+      if (this.class) {
+        classes.push(this.class);
+      }
 
       return classes;
     },

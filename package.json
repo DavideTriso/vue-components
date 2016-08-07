@@ -1,6 +1,6 @@
 {
   "name": "vue-components",
-  "version": "1.0.2",
+  "version": "1.0.4",
   "description": "Vue Components",
   "main": "dist/index.js",
   "scripts": {
@@ -8,7 +8,7 @@
     "lint": "eslint --ext .js,.vue src",
     "prepublish": "npm run lint && npm run build"
   },
-  "author": "Peter van Meijgaard <peter@vivid-websolutions.nl>",
+  "author": "Vivid Websolutions <info@vivid-websolutions.nl>",
   "repository": {
     "type": "git",
     "url": "https://github.com/vivid-web/vue-components.git"
@@ -29,6 +29,10 @@
     "frontend"
   ],
   "license": "MIT",
+  "files": [
+    "dist",
+    "src"
+  ],
   "dependencies": {
     "vue": "^1.0.21"
   },

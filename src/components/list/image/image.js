@@ -1,7 +1,14 @@
-import ElementMixin from '../../../mixins/element';
+import ElementMixin from './../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
+    /**
+     * Element name used for BEM
+     */
     return {
       element: 'image',
     };
@@ -9,8 +16,7 @@ export default {
 
   props: {
     /**
-     * The image to be displayed inside
-     * the list item
+     * Image to be displayed inside the list item
      */
     image: {
       type: String,
@@ -18,15 +24,11 @@ export default {
     },
 
     /**
-     * The alt tag
+     * Alt tag
      */
     title: {
       type: String,
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

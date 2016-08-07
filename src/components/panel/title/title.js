@@ -1,23 +1,26 @@
-import ElementMixin from '../../../mixins/element';
+import ElementMixin from './../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'title',
     };
   },
 
   props: {
     /**
-     * The content for the title
+     * Title content
      */
     content: {
       type: String,
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

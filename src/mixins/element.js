@@ -29,14 +29,20 @@ export default {
         this.contextualStyle = this.$parent.contextualStyle;
       }
 
-      classes.push(
-        CSSUtil.contextualClass(
-          CSSUtil.has(
-            this.block, this.element
-          ),
-          this.contextualStyle
-        )
-      );
+      if (this.contextualStyle) {
+        classes.push(
+          CSSUtil.contextualClass(
+            CSSUtil.has(
+              this.block, this.element
+            ),
+            this.contextualStyle
+          )
+        );
+      }
+
+      if (this.class) {
+        classes.push(this.class);
+      }
 
       return classes;
     },

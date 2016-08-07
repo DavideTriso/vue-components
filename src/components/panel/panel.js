@@ -1,20 +1,29 @@
-import BlockMixin from '../../mixins/block';
+import BlockMixin from './../../mixins/block';
+import SlotMixin from './../../mixins/slot';
 import * as PanelBody from './body/body.vue';
 import * as PanelFooter from './footer/footer.vue';
-import * as PanelHeader from './header/header.vue';
+import * as PanelHeading from './heading/heading.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+    SlotMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'panel',
     };
   },
 
   props: {
     /**
-     * The header of the panel
+     * The heading of the panel
      */
-    header: {
+    heading: {
       type: Object,
       required: false,
     },
@@ -23,7 +32,6 @@ export default {
      * The body of the panel
      */
     body: {
-      type: Object,
       required: false,
     },
 
@@ -31,69 +39,45 @@ export default {
      * The footer of the panel
      */
     footer: {
-      type: Object,
       required: false,
     },
   },
 
   components: {
-    /**
-     * The body of the panel
-     */
     PanelBody,
-
-    /**
-     * The footer of the panel
-     */
     PanelFooter,
-
-    /**
-     * The header of the panel
-     */
-    PanelHeader,
+    PanelHeading,
   },
-
-  mixins: [
-    BlockMixin,
-  ],
 
   computed: {
     /**
-     * Computed property which will check whether
-     * there is a header
+     * Computed property which will output
+     * whether the panel has an heading
      *
-     * @returns {boolean}
+     * @returns {boolean} If the panel has an heading
      */
-    hasHeader() {
-      return !!this.header;
+    hasHeading() {
+      return this.heading || this.hasSlot('heading');
     },
 
     /**
-     * Computed property which will check whether
-     * there is a body
+     * Computed property which will output
+     * whether the panel has a body
      *
-     * @returns {boolean}
+     * @returns {boolean} If panel has a body
      */
     hasBody() {
-      if (!this.body) {
-        return false;
-      }
-
-      return this.body.enabled;
+      return this.body || this.hasSlot('body');
     },
 
     /**
-     * Computed property which will check whether
-     * there is a footer
+     * Computed property which will output
+     * whether the panel has a footer
      *
-     * @returns {boolean}
+     * @returns {boolean} If the panel has a footer
      */
     hasFooter() {
-      if (!this.footer) {
-        return false;
-      }
-
-      return this.footer.enabled;
+      return this.footer || this.hasSlot('footer');
     },
   },
 };

@@ -1,19 +1,17 @@
-// Imports
-@import "../../../assets/stylus/settings/variables.styl"
-@import "../../../assets/stylus/mixins/mixins.styl"
+@import "./../../../assets/stylus/helpers/spa-imports.styl"
 
 .list
   +has('content')
     display: inline-block
     +variant('primary')
-      color: $primary
+      color: palette('Blue')
     +variant('success')
-      color: $success
+      color: palette('Green')
     +variant('danger')
-      color: $danger
+      color: palette('Red')
     +variant('warning')
-      color: $warning
+      color: palette('Orange')
     +variant('info')
-      color: $info
+      color: palette('Light Blue')
     +variant('dark')
-      color: $white
+      color: palette('White')

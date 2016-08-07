@@ -1,27 +1,25 @@
-// Imports
-@import "../../../assets/stylus/settings/variables.styl"
-@import "../../../assets/stylus/mixins/mixins.styl"
+@import "./../../../assets/stylus/helpers/spa-imports.styl"
 
 .list
   +has('item')
-    background-color: $white
+    background-color: palette('White')
     display: block
     margin: 0
     padding: 1rem
     list-style: none
-    border-bottom: 1px solid $light_gray
+    border-bottom: 1px solid palette('Grey', '200')
     &:last-child
       border: none
     +variant('primary')
-      border-color: $primary_light
+      border-color: palette('Blue', '50')
     +variant('success')
-      border-color: $success_light
+      border-color: palette('Green', '50')
     +variant('danger')
-      border-color: $danger_light
+      border-color: palette('Red', '50')
     +variant('warning')
-      border-color: $warning_light
+      border-color: palette('Orange', '50')
     +variant('info')
-      border-color: $info_light
+      border-color: palette('Light Blue', '50')
     +variant('dark')
-      border-color: $blue_gray
-      background-color: $dark_blue_gray
+      border-color: palette('Blue Grey', '800')
+      background-color: palette('Blue Grey', '900')

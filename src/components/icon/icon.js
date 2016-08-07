@@ -1,20 +1,15 @@
-import BlockMixin from '../../mixins/block';
+import BlockMixin from './../../mixins/block';
 
 export default {
-  /**
-   * The mixins
-   */
   mixins: [
     BlockMixin,
   ],
 
-  /**
-   *The data
-   *
-   * @returns {object} The data
-   */
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'icon',
     };
   },

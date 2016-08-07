@@ -2,43 +2,31 @@
  * [Master Stylesheet]
  *
  * Project:       Vue Components
- * Version:       1.0.3
- * Author:        Peter van Meijgaard <peter@vivid-websolutions.nl>
+ * Version:       1.0.4
+ * Author:        Vivid Websolutions <info@vivid-websolutions.nl>
  * Description:   A group of simple to use Vue components
  *
  *
  * [Table of Contents]
  *
- *  1. Modules
- *    1.1 Normalize
- *  2. Settings
- *    2.1 Variables
- *    2.2 Box Sizing
- *    2.3 REM size
- *  3. Mixins
- *    3.1 Mixins
+ *  1. Config
+ *  2. Vendor
+ *  3. Base
  */
 
-/**
- *  1. Modules
- *    1.1 Normalize
+/*
+ *  1. Config
  */
-@import "./../vendor/normalize.styl/normalize"
+@require 'config/*'
 
-/**
- *  2. Settings
- *    2.1 Variables
- *    2.2 Fixes
- *    2.3 REM size
+/*
+ *  2. Vendor
  */
-@import "./settings/imports"
-@import "./settings/variables"
-@import "./settings/overall"
-@import "./settings/box-sizing"
-@import "./settings/size"
+@require 'vendor/*'
+@require './../vendor/google-material-color/dist/palette.styl'
+@require './../vendor/normalize.styl/normalize.styl'
 
-/**
- *  3. Mixins
- *    3.1 Mixins
+/*
+ *  3. Base
  */
-@import "./mixins/mixins"
+@require 'base/*'

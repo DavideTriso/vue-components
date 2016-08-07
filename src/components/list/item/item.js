@@ -1,9 +1,16 @@
-import ElementMixin from '../../../mixins/element';
-import * as ListImage from '../image/image.vue';
-import * as ListContent from '../content/content.vue';
+import ElementMixin from './../../../mixins/element';
+import * as ListImage from './../image/image.vue';
+import * as ListContent from './../content/content.vue';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
+    /**
+     * Element name used for BEM
+     */
     return {
       element: 'item',
     };
@@ -11,8 +18,7 @@ export default {
 
   props: {
     /**
-     * The text to be displayed inside
-     * the list item
+     * Text to be displayed inside the list item
      */
     content: {
       type: String,
@@ -20,8 +26,7 @@ export default {
     },
 
     /**
-     * The image to be displayed inside
-     * the list item
+     * Image to be displayed inside the list item
      */
     image: {
       type: String,
@@ -31,10 +36,10 @@ export default {
 
   computed: {
     /**
-     * Computed property which will
-     * check if there is an image present
+     * Computed property which will output
+     * whether the item has an image
      *
-     * @returns {boolean}
+     * @returns {boolean} If the item has an image
      */
     hasImage() {
       return !!this.image;
@@ -45,8 +50,4 @@ export default {
     ListImage,
     ListContent,
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

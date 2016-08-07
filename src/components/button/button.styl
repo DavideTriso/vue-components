@@ -1,15 +1,15 @@
-// Imports
-@import "../../assets/stylus/settings/variables.styl"
-@import "../../assets/stylus/mixins/mixins.styl"
+@import "./../../assets/stylus/helpers/spa-imports.styl"
 
 .button
   transition(100ms)
+  border: none
   border-radius: .125rem
   box-shadow: $box_shadow_minimum
-  color: $black
+  color: palette('Black')
   display: inline-block
   font-weight: 400
   margin: 0
+  outline: none
   padding: .75rem 1rem
   text-decoration: none
   position: relative
@@ -17,37 +17,38 @@
     cursor: pointer
 
   +variant('primary')
-    background-color: $primary
-    color: $white
+    background-color: palette('Blue')
+    color: palette('White')
     &:hover
-      background-color: $primary_600
+      background-color: palette('Blue', '600')
   +variant('success')
-    background-color: $success
-    color: $white
+    background-color: palette('Green')
+    color: palette('White')
     &:hover
-      background-color: $success_600
+      background-color: palette('Green', '600')
   +variant('danger')
-    background-color: $danger
-    color: $white
+    background-color: palette('Red')
+    color: palette('White')
     &:hover
-      background-color: $danger_600
+      background-color: palette('Red', '600')
   +variant('warning')
-    background-color: $warning
-    color: $white
+    background-color: palette('Orange')
+    color: palette('White')
     &:hover
-      background-color: $warning_600
+      background-color: palette('Orange', '600')
   +variant('info')
-    background-color: $info
-    color: $white
+    background-color: palette('Light Blue')
+    color: palette('White')
     &:hover
-      background-color: $info_600
+      background-color: palette('Light Blue', '600')
   +variant('dark')
-    background-color: $blue_gray
-    color: $white
+    background-color: palette('Blue Grey', '800')
+    color: palette('White')
     &:hover
-      background-color: $dark_blue_gray
+      background-color: palette('Blue Grey', '900')
   +variant('block')
     display: block
     text-align: center
+    width: 100%
   +variant('dropdown')
     z-index: 999

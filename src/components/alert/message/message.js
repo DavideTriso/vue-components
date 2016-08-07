@@ -1,23 +1,28 @@
-import ElementMixin from '../../../mixins/element';
+import SlotMixin from './../../../mixins/slot';
+import ElementMixin from './../../../mixins/element';
 
 export default {
+  mixins: [
+    SlotMixin,
+    ElementMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'message',
     };
   },
 
   props: {
     /**
-     * The message content
+     * Message content
      */
     content: {
       type: String,
-      required: true,
+      required: false,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 };

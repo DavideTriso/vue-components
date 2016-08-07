@@ -3,51 +3,46 @@ import * as BreadcrumbContent from '../content/content.vue';
 import * as BreadcrumbLink from '../link/link.vue';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'item',
     };
   },
 
   props: {
     /**
-     * The breadcrumb body
+     * Item body
      */
     body: {
-      type: Object,
       required: true,
     },
 
     /**
-     * The linked page
+     * Item link
      */
     link: {
-      type: Object,
       required: false,
     },
   },
 
-  mixins: [
-    ElementMixin,
-  ],
-
   components: {
-    /**
-     * The component for the breadcrumb content
-     */
     BreadcrumbContent,
-
-    /**
-     * The component for the breadcrumb link
-     */
     BreadcrumbLink,
   },
 
   computed: {
-
     /**
      * Computed property which will output
      * whether the item has a link or not
+     *
+     * @returns {boolean} If the item has a link
      */
     hasLink() {
       return !!this.link;

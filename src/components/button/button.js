@@ -1,9 +1,19 @@
-import BlockMixin from '../../mixins/block';
-import * as Icon from '../icon/icon.vue';
+// import DebugUtil from './../../utils/debug';
+import BlockMixin from './../../mixins/block';
+import SlotMixin from './../../mixins/slot';
+import * as Icon from './../icon/icon.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+    SlotMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'button',
     };
   },
@@ -14,15 +24,14 @@ export default {
      */
     content: {
       type: String,
-      required: true,
+      required: false,
     },
 
     /**
      * The button link
      */
-    link: {
-      type: Object,
-      required: true,
+    action: {
+      required: false,
     },
 
     /**
@@ -34,56 +43,82 @@ export default {
     },
   },
 
-  mixins: [
-    BlockMixin,
-  ],
-
   computed: {
     /**
-     * Computed property which will output if
-     * the button has a link
+     * Computed property which will output
+     * whether the button uses a function
      *
-     * @returns {boolean}
+     * @returns {boolean} If the button uses a function
      */
-    hasLink() {
-      // Check when the property link isn't set
-      if (!this.link) {
-        return false;
-      }
-
-      return !!this.link.to && !this.link.action;
+    isFunction() {
+      return typeof this.action === 'function';
     },
 
     /**
-     * Computed property which will output if
-     * the button has an action
+     * Computed property which will output
+     * whether the button is a link
      *
-     * @returns {boolean}
+     * @returns {boolean} If the button is a link
      */
-    hasAction() {
-      // Check when the property link isn't set
-      if (!this.link) {
-        return false;
+    isLink() {
+      return typeof this.action === 'string';
+    },
+
+    /**
+     * Computed property which will output
+     * whether the button uses VueRouter
+     *
+     * @returns {boolean} If the button uses VueRouter
+     */
+    isVueRouter() {
+      if (typeof this.action === 'object') {
+        if (this.action.vueRouter) {
+          return true;
+        }
       }
 
-      return !!this.link.action && !this.link.to;
+      return false;
     },
 
     /**
      * Computed property which will check if
-     * the button is valid
+     * the button is the default DOM button
      *
-     * @returns {boolean}
+     * @returns {boolean} If the button is the default
      */
-    isValid() {
-      return !(!this.hasAction && !this.hasLink);
+    isDefault() {
+      let isDefault = true;
+
+      if (this.isLink) {
+        isDefault = false;
+      }
+
+      if (this.isFunction) {
+        isDefault = false;
+      }
+
+      if (this.isVueRouter) {
+        isDefault = false;
+      }
+
+      return isDefault;
     },
 
     /**
-     * Computer property which will check if
-     * the button has an icon
+     * Computed property which will output
+     * whether the button is valid
      *
-     * @returns {boolean}
+     * @returns {boolean} If the button is valid
+     */
+    isValid() {
+      return this.hasSlot('default') || this.content;
+    },
+
+    /**
+     * Computed property which will output
+     * whether the button has an icon or not
+     *
+     * @returns {boolean} If the button has an icon
      */
     hasIcon() {
       return !!this.icon;
@@ -93,7 +128,8 @@ export default {
   created() {
     // Check if the button is valid
     if (!this.isValid) {
-      console.warn('Warning: The button contains an action and a link. It cannot have both!');
+      // todo: Find out why this doesn't work on default slot
+      // DebugUtil.warningMessage('The button does not contain any content');
     }
   },
 

@@ -1,6 +1,4 @@
-// Imports
-@import "../../assets/stylus/settings/variables.styl"
-@import "../../assets/stylus/mixins/mixins.styl"
+@import "./../../assets/stylus/helpers/spa-imports.styl"
 
 .icon
   display: inline-block
@@ -13,8 +11,8 @@
   +variant('button')
     padding-left: .5rem
 
-
-for $num in (1..length($materialDesignIconHexes))
-  .icon--{$materialDesignIconNames[$num]}
-    &:before
-      content: '\' + $materialDesignIconHexes[$num]
+for $icon in $mdi-icons
+  .icon
+    +variant($icon)
+      &:before
+        content: '\' + $mdi-icons[$icon]

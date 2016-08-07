@@ -1,40 +1,33 @@
-import * as Config from '../config.json';
-
+/* ============
+ * CSS Helper
+ * ============
+ *
+ * A CSS helper to for BEM structured styling
+ */
 export default {
 
   /**
    * The allowed contextual types
    */
   contextualTypes: [
-    'danger',
-    'info',
+    'default',
     'primary',
     'success',
+    'danger',
     'warning',
+    'info',
     'dark',
   ],
 
   /**
    * The element separator
    */
-  elementSeparator() {
-    if (Config.element_separator) {
-      return Config.element_separator;
-    }
-
-    return '__';
-  },
+  elementSeparator: '__',
 
   /**
    * The modifier separator
    */
-  modifierSeparator() {
-    if (Config.modifier_separator) {
-      return Config.modifier_separator;
-    }
-
-    return '--';
-  },
+  modifierSeparator: '--',
 
   /**
    * Method which will return the corrected contextual class
@@ -61,7 +54,7 @@ export default {
    * @returns {string} The corrected class
    */
   has(block, element) {
-    return block + this.elementSeparator() + element;
+    return block + this.elementSeparator + element;
   },
 
   /**
@@ -72,7 +65,7 @@ export default {
    * @returns {string} The corrected class
    */
   variant(item, variant) {
-    return item + this.modifierSeparator() + variant;
+    return item + this.modifierSeparator + variant;
   },
 
   /**
@@ -82,10 +75,25 @@ export default {
    * @param variants The array variants
    */
   variants(item, variants) {
-    const tempArray = [];
+    let tempArray = [];
 
     variants.forEach((variant) => {
-      tempArray.push(this.variant(item, variant));
+      if (typeof variant === 'string') {
+        tempArray.push(this.variant(item, variant));
+      }
+
+      if (typeof variant === 'object') {
+        const newItem = this.variant(item, variant.name);
+        tempArray.push(newItem);
+
+        if (variant.contextualStyle) {
+          tempArray.push(this.contextualClass(newItem, variant.contextualStyle));
+        }
+
+        if (variant.variants) {
+          tempArray = tempArray.concat(this.variants(newItem, variant.variants));
+        }
+      }
     });
 
     return tempArray;
