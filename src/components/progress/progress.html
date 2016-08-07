@@ -1,7 +1,7 @@
 <div
   :class="classNames"
 >
-  <progress-bar
-    :progress="progress"
-  ></progress-bar>
+    <progress-bar
+      :progress="progress"
+    ><slot v-if="hasSlot('default')"></slot></progress-bar>
 </div>

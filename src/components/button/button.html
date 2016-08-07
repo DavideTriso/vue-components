@@ -8,7 +8,7 @@
   </slot>
   <icon
     v-if="hasIcon"
-    :variants="[icon.variants, 'button']"
+    :variants="elementVariants('icon')"
   ></icon>
 </a>
 
@@ -22,7 +22,7 @@
   </slot>
   <icon
     v-if="hasIcon"
-    :variants="[icon.variants, 'button']"
+    :variants="elementVariants('icon')"
   ></icon>
 </a>
 
@@ -36,7 +36,7 @@
   </slot>
   <icon
     v-if="hasIcon"
-    :variants="[icon.variants, 'button']"
+    :variants="elementVariants('icon')"
   ></icon>
 </a>
 
@@ -49,6 +49,6 @@
   </slot>
   <icon
     v-if="hasIcon"
-    :variants="[icon.variants, 'button']"
+    :variants="elementVariants('icon')"
   ></icon>
 </button>

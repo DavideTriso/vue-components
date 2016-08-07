@@ -12,6 +12,9 @@ export default {
 
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'panel',
     };
   },
@@ -29,7 +32,6 @@ export default {
      * The body of the panel
      */
     body: {
-      type: Object,
       required: false,
     },
 
@@ -37,57 +39,45 @@ export default {
      * The footer of the panel
      */
     footer: {
-      type: Object,
       required: false,
     },
   },
 
   components: {
-    /**
-     * The body of the panel
-     */
     PanelBody,
-
-    /**
-     * The footer of the panel
-     */
     PanelFooter,
-
-    /**
-     * The heading of the panel
-     */
     PanelHeading,
   },
 
   computed: {
     /**
-     * Computed property which will check whether
-     * there is a heading
+     * Computed property which will output
+     * whether the panel has an heading
      *
-     * @returns {boolean}
+     * @returns {boolean} If the panel has an heading
      */
     hasHeading() {
-      return !!this.heading;
+      return this.heading || this.hasSlot('heading');
     },
 
     /**
-     * Computed property which will check whether
-     * there is a body
+     * Computed property which will output
+     * whether the panel has a body
      *
-     * @returns {boolean}
+     * @returns {boolean} If panel has a body
      */
     hasBody() {
-      return !!this.body;
+      return this.body || this.hasSlot('body');
     },
 
     /**
-     * Computed property which will check whether
-     * there is a footer
+     * Computed property which will output
+     * whether the panel has a footer
      *
-     * @returns {boolean}
+     * @returns {boolean} If the panel has a footer
      */
     hasFooter() {
-      return !!this.footer;
+      return this.footer || this.hasSlot('footer');
     },
   },
 };

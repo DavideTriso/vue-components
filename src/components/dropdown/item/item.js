@@ -1,24 +1,29 @@
-import ElementMixin from '../../../mixins/element';
+import ElementMixin from './../../../mixins/element';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'item',
     };
   },
 
   props: {
-
     /**
-     * The chosen item
+     * Chosen item
      */
     chosen: {
-      type: Object,
       required: false,
     },
 
     /**
-     * The method used to collapse the dropdown
+     * Collapse function
      */
     collapse: {
       type: Function,
@@ -26,38 +31,42 @@ export default {
     },
 
     /**
-     * The field identifier
+     * Field name
      */
     fieldName: {
       type: String,
-      required: true,
+      required: false,
     },
 
     /**
-     * The given item
+     * Given item
      */
     item: {
-      type: Object,
       required: true,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 
   computed: {
     /**
      * The content to be displayed
      *
-     * @returns {String}
+     * @returns {String} The content
      */
     content() {
+      if (typeof this.item === 'string') {
+        return this.item;
+      }
+
       return this.item[this.fieldName];
     },
   },
 
   methods: {
+    /**
+     * Method used to activate the item
+     *
+     * @param {object} item The item
+     */
     activate(item) {
       this.chosen = item;
       this.collapse();

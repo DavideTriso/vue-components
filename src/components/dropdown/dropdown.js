@@ -1,5 +1,5 @@
-import BlockMixin from '../../mixins/block';
-import * as VButton from '../button/button.vue';
+import BlockMixin from './../../mixins/block';
+import * as VButton from './../button/button.vue';
 import * as DropdownMenu from './menu/menu.vue';
 
 export default {
@@ -9,31 +9,40 @@ export default {
         'block',
         'dropdown',
       ],
-      link: {
-        action: () => {
-          this.toggle();
-        },
+      action: () => {
+        this.toggle();
       },
     };
 
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'dropdown',
+
+      /**
+       * Dropdown button
+       */
       button,
+
+      /**
+       * If the dropdown is collapsed
+       */
       isCollapsed: false,
     };
   },
 
   props: {
     /**
-     * The title of the dropdown
+     * Dropdown placeholder
      */
-    title: {
+    placeholder: {
       type: String,
       required: true,
     },
 
     /**
-     * The content displayed inside the button
+     * Dropdown items
      */
     items: {
       type: Array,
@@ -41,10 +50,9 @@ export default {
     },
 
     /**
-     * The chosen item
+     * Dropdown chosen item
      */
     chosen: {
-      type: Object,
       required: false,
     },
 
@@ -53,16 +61,12 @@ export default {
      */
     fieldName: {
       type: String,
-      required: true,
+      required: false,
     },
   },
 
   components: {
     VButton,
-
-    /**
-     * The dropdown menu
-     */
     DropdownMenu,
   },
 
@@ -78,9 +82,9 @@ export default {
 
   computed: {
     /**
-     * The icon for the button
+     * Button icon
      *
-     * @returns {Object} The object given to the button
+     * @returns {Object} Button icon
      */
     buttonIcon() {
       const icon = this.isCollapsed ? 'menu-up' : 'menu-down';
@@ -92,12 +96,21 @@ export default {
       };
     },
 
-    titleDisplayed() {
+    /**
+     * Button content
+     *
+     * @returns {string} The button content
+     */
+    buttonContent() {
+      if (typeof this.chosen === 'string') {
+        return this.chosen;
+      }
+
       if (this.chosen && this.chosen[this.fieldName]) {
         return this.chosen[this.fieldName];
       }
 
-      return this.title;
+      return this.placeholder;
     },
   },
 };

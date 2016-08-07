@@ -1,20 +1,19 @@
 <div :class="classNames">
 
   <panel-heading
-    v-if="hasHeading || hasSlot('title')"
+    v-if="hasHeading"
     :title="propOptional(heading, 'title')"
     :variants="elementVariants('heading')"
     :contextual-style="elementContextualStyle('heading')"
   >
     <slot
-      v-if="hasSlot('title')"
-      name="title"
-      slot="title"
+      v-if="hasSlot('heading')"
+      name="heading"
     ></slot>
   </panel-heading>
 
   <panel-body
-    v-if="hasBody || hasSlot('body')"
+    v-if="hasBody"
     :content="elementContent('body')"
     :variants="elementVariants('body')"
     :contextual-style="elementContextualStyle('body')"
@@ -22,12 +21,11 @@
     <slot
       v-if="hasSlot('body')"
       name="body"
-      slot="body"
     ></slot>
   </panel-body>
 
   <panel-footer
-    v-if="hasFooter || hasSlot('footer')"
+    v-if="hasFooter"
     :content="elementContent('footer')"
     :variants="elementVariants('footer')"
     :contextual-style="elementContextualStyle('footer')"
@@ -35,7 +33,6 @@
     <slot
       v-if="hasSlot('footer')"
       name="footer"
-      slot="footer"
     ></slot>
   </panel-footer>
 </div>

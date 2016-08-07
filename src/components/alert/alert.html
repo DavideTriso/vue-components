@@ -16,8 +16,8 @@
     :content="elementContent('title')"
   >
     <slot
-      name="title"
       v-if="hasSlot('title')"
+      name="title"
     ></slot>
   </alert-title>
 
@@ -28,8 +28,8 @@
     :content="elementContent('message')"
   >
     <slot
-      name="message"
       v-if="hasSlot('message')"
+      name="message"
     ></slot>
   </alert-message>
 

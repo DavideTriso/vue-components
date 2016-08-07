@@ -18,8 +18,6 @@ export default {
 
       if (this.contextualStyle) {
         classes.push(CSSUtil.contextualClass(this.block, this.contextualStyle));
-      } else {
-        classes.push(CSSUtil.contextualClass(this.block, 'default'));
       }
 
       if (this.class) {

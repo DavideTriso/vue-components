@@ -1,17 +1,23 @@
-import ElementMixin from '../../../mixins/element';
-import * as DropdownItem from '../item/item.vue';
+import ElementMixin from './../../../mixins/element';
+import * as DropdownItem from './../item/item.vue';
 
 export default {
+  mixins: [
+    ElementMixin,
+  ],
+
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'menu',
     };
   },
 
   props: {
-
     /**
-     * The items
+     * Menu items
      */
     items: {
       type: Array,
@@ -19,15 +25,14 @@ export default {
     },
 
     /**
-     * The chosen item
+     * Chosen menu item
      */
     chosen: {
-      type: Object,
       required: false,
     },
 
     /**
-     * The method used to collapse the dropdown
+     * Collapse function
      */
     collapse: {
       type: Function,
@@ -35,17 +40,13 @@ export default {
     },
 
     /**
-     * The field identifier
+     * Field name
      */
     fieldName: {
       type: String,
-      required: true,
+      required: false,
     },
   },
-
-  mixins: [
-    ElementMixin,
-  ],
 
   components: {
     DropdownItem,

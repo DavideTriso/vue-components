@@ -2,6 +2,7 @@ import * as VAlert from './components/alert/alert.vue';
 import * as VBreadcrumb from './components/breadcrumb/breadcrumb.vue';
 import * as VButton from './components/button/button.vue';
 import * as VDropdown from './components/dropdown/dropdown.vue';
+import * as VIcon from './components/icon/icon.vue';
 import * as VLabel from './components/label/label.vue';
 import * as VList from './components/list/list.vue';
 import * as VPanel from './components/panel/panel.vue';
@@ -15,6 +16,7 @@ export const components = {
   VBreadcrumb,
   VButton,
   VDropdown,
+  VIcon,
   VLabel,
   VList,
   VPanel,
@@ -36,6 +38,7 @@ export {
   VBreadcrumb,
   VButton,
   VDropdown,
+  VIcon,
   VLabel,
   VList,
   VPanel,
