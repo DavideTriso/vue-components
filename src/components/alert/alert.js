@@ -165,7 +165,7 @@ export default {
     }
 
     // Check if the alert has content
-    if(!this.hasContent) {
+    if (!this.hasContent) {
       DebugUtil.warningMessage('The alert has no content', this.$el);
     }
   },

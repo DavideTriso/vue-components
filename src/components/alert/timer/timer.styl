@@ -1,5 +1,4 @@
-@import "../../../assets/stylus/mixins/mixins.styl"
-@import "../../../assets/stylus/settings/variables.styl"
+@import "./../../../assets/stylus/helpers/spa-imports.styl"
 
 @keyframes timer {
   0% {
@@ -18,14 +17,14 @@
     left: 0
     height: .25rem
     +variant('primary')
-      background: $primary_dark
+      background: palette('Blue', '900')
     +variant('success')
-      background: $success_dark
+      background: palette('Green', '900')
     +variant('danger')
-      background: $danger_dark
+      background: palette('Red', '900')
     +variant('warning')
-      background: $warning_dark
+      background: palette('Orange', '900')
     +variant('info')
-      background: $info_dark
+      background: palette('Light Blue', '900')
     +variant('dark')
-      background: $white
+      background: palette('White')

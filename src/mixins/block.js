@@ -18,6 +18,8 @@ export default {
 
       if (this.contextualStyle) {
         classes.push(CSSUtil.contextualClass(this.block, this.contextualStyle));
+      } else {
+        classes.push(CSSUtil.contextualClass(this.block, 'default'));
       }
 
       if (this.class) {
@@ -25,50 +27,6 @@ export default {
       }
 
       return classes;
-    },
-  },
-
-  methods: {
-
-
-    /**
-     * Method used to find the variants of a slot
-     *
-     * @param elemtent The name of the slot
-     * @returns {Array} The variants
-     */
-    elementVariants(elemtent) {
-      if (this[elemtent] && this[elemtent].variants) {
-        return this[elemtent].variants;
-      }
-
-      return [];
-    },
-
-    /**
-     * Method used to determine the contextual style for the slot
-     *
-     * @param element
-     * @returns {string}
-     */
-    elementContextualStyle(element) {
-      if (this[element] && this[element].contextualStyle) {
-        return this[element].contextualStyle;
-      }
-
-      return this.contextualStyle;
-    },
-
-    elementContent(element) {
-      if (typeof this[element] === 'string') {
-        return this[element];
-      }
-
-      if (typeof this[element] === 'object' && this[element].content) {
-        return this[element].content;
-      }
-
-      return undefined;
     },
   },
 };

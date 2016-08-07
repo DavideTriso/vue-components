@@ -1,17 +1,17 @@
 <div :class="classNames">
   <breadcrumb-link
     v-if="hasLink"
-    :content="body.content"
+    :content="elementContent('body')"
     :vue-router="link.vueRouter"
-    :to="link.to"
-    :variants="link.variants"
-    :contextual-style="link.contextualStyle"
+    :to="linkTo()"
+    :variants="elementVariants('link')"
+    :contextual-style="elementContextualStyle('link')"
   ></breadcrumb-link>
 
   <breadcrumb-content
     v-else
-    :content="body.content"
-    :variants="body.variants"
-    :contextual-style="body.contextualStyle"
+    :content="elementContent('body')"
+    :variants="elementVariants('body')"
+    :contextual-style="elementContextualStyle('body')"
   ></breadcrumb-content>
 </div>

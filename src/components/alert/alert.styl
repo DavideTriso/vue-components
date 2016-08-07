@@ -1,9 +1,8 @@
-@import "../../assets/stylus/mixins/mixins.styl"
-@import "../../assets/stylus/settings/variables.styl"
+@import "./../../assets/stylus/helpers/spa-imports.styl"
 
 .alert
   position: relative
-  background-color: $white
+  background-color: palette('White')
   border-radius: .125rem
   box-shadow: $box_shadow_normal
   display: block
@@ -13,20 +12,20 @@
   &:first-child
     margin-top: 0
   +variant('primary')
-    background-color: $primary
-    border-color: $primary
+    background-color: palette('Blue')
+    border-color: palette('Blue')
   +variant('success')
-    background-color: $success
-    border-color: $success
+    background-color: palette('Green')
+    border-color: palette('Green')
   +variant('danger')
-    background-color: $danger
-    border-color: $danger
+    background-color: palette('Red')
+    border-color: palette('Red')
   +variant('warning')
-    background-color: $warning
-    border-color: $warning
+    background-color: palette('Orange')
+    border-color: palette('Orange')
   +variant('info')
-    background-color: $info
-    border-color: $info
+    background-color: palette('Light Blue')
+    border-color: palette('Light Blue')
   +variant('dark')
-    color: $white
-    background-color: $blue_gray
+    color: palette('White')
+    background-color: palette('Blue Grey', '800')

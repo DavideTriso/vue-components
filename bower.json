@@ -38,5 +38,8 @@
   ],
   "devDependencies": {
     "normalize.styl": "latest"
+  },
+  "dependencies": {
+    "google-material-color": "^1.2.6"
   }
 }

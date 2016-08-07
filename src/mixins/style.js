@@ -24,4 +24,46 @@ export default {
       required: false,
     },
   },
+
+  methods: {
+    /**
+     * Method used to find the variants of a slot
+     *
+     * @param element The name of the slot
+     * @returns {Array} The variants
+     */
+    elementVariants(element) {
+      if (this[element] && this[element].variants) {
+        return this[element].variants;
+      }
+
+      return [];
+    },
+
+    /**
+     * Method used to determine the contextual style for the slot
+     *
+     * @param element
+     * @returns {string}
+     */
+    elementContextualStyle(element) {
+      if (this[element] && this[element].contextualStyle) {
+        return this[element].contextualStyle;
+      }
+
+      return this.contextualStyle;
+    },
+
+    elementContent(element) {
+      if (typeof this[element] === 'string') {
+        return this[element];
+      }
+
+      if (typeof this[element] === 'object' && this[element].content) {
+        return this[element].content;
+      }
+
+      return undefined;
+    },
+  },
 };

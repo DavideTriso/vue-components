@@ -38,6 +38,15 @@ export default {
             this.contextualStyle
           )
         );
+      } else {
+        classes.push(
+          CSSUtil.contextualClass(
+            CSSUtil.has(
+              this.block, this.element
+            ),
+            'default'
+          )
+        );
       }
 
       if (this.class) {
