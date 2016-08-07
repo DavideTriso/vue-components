@@ -1,0 +1,37 @@
+@import "./../../../assets/stylus/helpers/spa-imports.styl"
+
+@keyframes fadeInDown {
+  from {
+    transform: translate3d(-15rem, 0, 0)
+  }
+
+  to {
+    transform: none
+  }
+}
+
+@keyframes fadeOutUp {
+  from {
+  }
+
+  to {
+    transform: translate3d(-15rem, 0, 0)
+  }
+}
+
+
+.nav
+  +has('side')
+    top: 4rem
+    width: 15rem
+    position: absolute
+    height: calc(100% - 4rem)
+    min-height: calc(100vh - 4rem)
+    background-color: palette('Black')
+    color: palette('White')
+    padding: 1rem
+    z-index: 999
+    +variant('expand-enter')
+      animation: fadeInDown .5s ease
+    +variant('expand-leave')
+      animation: fadeOutUp .5s ease
