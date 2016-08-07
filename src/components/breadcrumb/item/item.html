@@ -6,7 +6,7 @@
     v-if="hasLink"
     :content="elementContent('body')"
     :vue-router="link.vueRouter"
-    :to="linkTo()"
+    :to="propOptional(link, 'to')"
     :variants="elementVariants('link')"
     :contextual-style="elementContextualStyle('link')"
   ></breadcrumb-link>

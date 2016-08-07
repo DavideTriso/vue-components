@@ -7,13 +7,16 @@ export default {
 
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'content',
     };
   },
 
   props: {
     /**
-     * The text to be displayed
+     * Breadcrumb item content
      */
     content: {
       type: String,

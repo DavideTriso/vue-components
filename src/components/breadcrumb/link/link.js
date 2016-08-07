@@ -7,13 +7,16 @@ export default {
 
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'link',
     };
   },
 
   props: {
     /**
-     * The content
+     * Link content
      */
     content: {
       type: String,
@@ -21,7 +24,7 @@ export default {
     },
 
     /**
-     * The route
+     * Link route
      */
     to: {
       type: String,

@@ -8,13 +8,16 @@ export default {
 
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'breadcrumb',
     };
   },
 
   props: {
     /**
-     * The breadcrumb items
+     * Breadcrumb items
      */
     items: {
       type: Array,
@@ -23,9 +26,6 @@ export default {
   },
 
   components: {
-    /**
-     * The displayed breadcrumb item
-     */
     BreadcrumbItem,
   },
 };

@@ -9,20 +9,23 @@ export default {
 
   data() {
     return {
+      /**
+       * Element name used for BEM
+       */
       element: 'item',
     };
   },
 
   props: {
     /**
-     * The breadcrumb body
+     * Item body
      */
     body: {
       required: true,
     },
 
     /**
-     * The linked page
+     * Item link
      */
     link: {
       required: false,
@@ -30,35 +33,16 @@ export default {
   },
 
   components: {
-    /**
-     * The component for the breadcrumb content
-     */
     BreadcrumbContent,
-
-    /**
-     * The component for the breadcrumb link
-     */
     BreadcrumbLink,
-  },
-
-  methods: {
-    linkTo() {
-      if (typeof this.link === 'string') {
-        return this.link;
-      }
-
-      if (typeof this.link === 'object' && this.link.to) {
-        return this.link.to;
-      }
-
-      return undefined;
-    },
   },
 
   computed: {
     /**
      * Computed property which will output
      * whether the item has a link or not
+     *
+     * @returns {boolean} If the item has a link
      */
     hasLink() {
       return !!this.link;

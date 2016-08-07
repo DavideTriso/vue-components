@@ -11,6 +11,9 @@ export default {
 
   data() {
     return {
+      /**
+       * Block name used for BEM
+       */
       block: 'button',
     };
   },
@@ -41,14 +44,32 @@ export default {
   },
 
   computed: {
+    /**
+     * Computed property which will output
+     * whether the button uses a function
+     *
+     * @returns {boolean} If the button uses a function
+     */
     isFunction() {
       return typeof this.action === 'function';
     },
 
+    /**
+     * Computed property which will output
+     * whether the button is a link
+     *
+     * @returns {boolean} If the button is a link
+     */
     isLink() {
       return typeof this.action === 'string';
     },
 
+    /**
+     * Computed property which will output
+     * whether the button uses VueRouter
+     *
+     * @returns {boolean} If the button uses VueRouter
+     */
     isVueRouter() {
       if (typeof this.action === 'object') {
         if (this.action.vueRouter) {
@@ -61,9 +82,9 @@ export default {
 
     /**
      * Computed property which will check if
-     * the button is valid
+     * the button is the default DOM button
      *
-     * @returns {boolean}
+     * @returns {boolean} If the button is the default
      */
     isDefault() {
       let isDefault = true;
@@ -83,15 +104,21 @@ export default {
       return isDefault;
     },
 
+    /**
+     * Computed property which will output
+     * whether the button is valid
+     *
+     * @returns {boolean} If the button is valid
+     */
     isValid() {
-      return !!(this.hasSlot('default') || this.content);
+      return this.hasSlot('default') || this.content;
     },
 
     /**
-     * Computer property which will check if
-     * the button has an icon
+     * Computed property which will output
+     * whether the button has an icon or not
      *
-     * @returns {boolean}
+     * @returns {boolean} If the button has an icon
      */
     hasIcon() {
       return !!this.icon;

@@ -1,5 +1,7 @@
 <div
   :class="classNames"
 >
-  {{content}}
+  <slot>
+    {{content}}
+  </slot>
 </div>
