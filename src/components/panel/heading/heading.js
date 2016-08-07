@@ -4,7 +4,7 @@ import * as PanelTitle from '../title/title.vue';
 export default {
   data() {
     return {
-      element: 'header',
+      element: 'heading',
     };
   },
 
@@ -13,7 +13,6 @@ export default {
      * The title
      */
     title: {
-      type: Object,
       required: false,
     },
   },

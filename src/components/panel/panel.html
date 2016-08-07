@@ -1,25 +1,41 @@
 <div :class="classNames">
 
-  <panel-header
-    v-if="hasHeader"
-    :title="header.title"
-    :variants="header.variants"
-    :contextual-style="header.contextualStyle"
-  ></panel-header>
+  <panel-heading
+    v-if="hasHeading || hasSlot('title')"
+    :title="propOptional(heading, 'title')"
+    :variants="elementVariants('heading')"
+    :contextual-style="elementContextualStyle('heading')"
+  >
+    <slot
+      v-if="hasSlot('title')"
+      name="title"
+      slot="title"
+    ></slot>
+  </panel-heading>
 
   <panel-body
-    v-if="hasBody"
-    :variants="body.variants"
-    :contextual-style="body.contextualStyle"
+    v-if="hasBody || hasSlot('body')"
+    :content="elementContent('body')"
+    :variants="elementVariants('body')"
+    :contextual-style="elementContextualStyle('body')"
   >
-    <slot name="body" slot="body"></slot>
+    <slot
+      v-if="hasSlot('body')"
+      name="body"
+      slot="body"
+    ></slot>
   </panel-body>
 
   <panel-footer
-    v-if="hasFooter"
-    :variants="footer.variants"
-    :contextual-style="footer.contextualStyle"
+    v-if="hasFooter || hasSlot('footer')"
+    :content="elementContent('footer')"
+    :variants="elementVariants('footer')"
+    :contextual-style="elementContextualStyle('footer')"
   >
-    <slot name="footer" slot="footer"></slot>
+    <slot
+      v-if="hasSlot('footer')"
+      name="footer"
+      slot="footer"
+    ></slot>
   </panel-footer>
 </div>

@@ -67,6 +67,10 @@ export default {
     },
 
     propOptional(element, key) {
+      if (typeof element === 'undefined') {
+        return undefined;
+      }
+
       if (typeof element === 'string') {
         return element;
       }

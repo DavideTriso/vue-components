@@ -1,9 +1,15 @@
-import BlockMixin from '../../mixins/block';
+import BlockMixin from './../../mixins/block';
+import SlotMixin from './../../mixins/slot';
 import * as PanelBody from './body/body.vue';
 import * as PanelFooter from './footer/footer.vue';
-import * as PanelHeader from './header/header.vue';
+import * as PanelHeading from './heading/heading.vue';
 
 export default {
+  mixins: [
+    BlockMixin,
+    SlotMixin,
+  ],
+
   data() {
     return {
       block: 'panel',
@@ -12,9 +18,9 @@ export default {
 
   props: {
     /**
-     * The header of the panel
+     * The heading of the panel
      */
-    header: {
+    heading: {
       type: Object,
       required: false,
     },
@@ -48,24 +54,20 @@ export default {
     PanelFooter,
 
     /**
-     * The header of the panel
+     * The heading of the panel
      */
-    PanelHeader,
+    PanelHeading,
   },
-
-  mixins: [
-    BlockMixin,
-  ],
 
   computed: {
     /**
      * Computed property which will check whether
-     * there is a header
+     * there is a heading
      *
      * @returns {boolean}
      */
-    hasHeader() {
-      return !!this.header;
+    hasHeading() {
+      return !!this.heading;
     },
 
     /**
@@ -75,11 +77,7 @@ export default {
      * @returns {boolean}
      */
     hasBody() {
-      if (!this.body) {
-        return false;
-      }
-
-      return this.body.enabled;
+      return !!this.body;
     },
 
     /**
@@ -89,11 +87,7 @@ export default {
      * @returns {boolean}
      */
     hasFooter() {
-      if (!this.footer) {
-        return false;
-      }
-
-      return this.footer.enabled;
+      return !!this.footer;
     },
   },
 };

@@ -1,0 +1,12 @@
+<div :class="classNames">
+
+  <slot name="title">
+    <panel-title
+      v-if="hasTitle"
+      :variants="elementVariants('title')"
+      :contextual-style="elementContextualStyle('title')"
+      :content="elementContent('title')"
+    ></panel-title>
+  </slot>
+
+</div>
