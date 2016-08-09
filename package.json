@@ -33,9 +33,6 @@
     "dist",
     "src"
   ],
-  "dependencies": {
-    "vue": "^1.0.21"
-  },
   "devDependencies": {
     "babel-core": "^6.0.0",
     "babel-loader": "^6.0.0",
