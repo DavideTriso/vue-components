@@ -1,0 +1,14 @@
+@import "./../../assets/stylus/helpers/spa-imports.styl"
+
+.drawer
+  top: 0
+  width: 15rem
+  position: absolute
+  height: 100%
+  min-height: 100vh
+  background-color: palette('White')
+  z-index: 999
+  +variant('slide-left-enter')
+    animation: slideInLeft .5s ease
+  +variant('slide-left-leave')
+    animation: slideOutLeft .5s ease

@@ -40,6 +40,7 @@
     "normalize.styl": "latest"
   },
   "dependencies": {
-    "google-material-color": "^1.2.6"
+    "google-material-color": "^1.2.6",
+    "animate.css": "^3.5.2"
   }
 }
