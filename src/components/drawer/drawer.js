@@ -1,5 +1,6 @@
 import BlockMixin from './../../mixins/block';
-import * as SideMenuItem from './item/item.vue';
+import * as DrawerBody from './body/body.vue';
+import * as DrawerHeading from './heading/heading.vue';
 
 export default {
   mixins: [
@@ -11,18 +12,12 @@ export default {
       /**
        * Block name used for BEM
        */
-      block: 'side-menu',
+      block: 'drawer',
     };
   },
 
-  props: {
-    items: {
-      type: Array,
-      required: true,
-    },
-  },
-
   components: {
-    SideMenuItem,
+    DrawerBody,
+    DrawerHeading,
   },
 };

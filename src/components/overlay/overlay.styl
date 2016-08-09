@@ -1,0 +1,13 @@
+@import "./../../assets/stylus/helpers/spa-imports.styl"
+
+.overlay
+  background-color: rgba(0,0,0,0.5)
+  height: 100%
+  position: absolute
+  top: 0
+  width: 100%
+  z-index: 2
+  +variant('fade-enter')
+    animation: fadeIn .5s ease
+  +variant('fade-leave')
+    animation: fadeOut .5s ease

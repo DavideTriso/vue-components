@@ -41,4 +41,8 @@ export default {
   ready() {
     this.startTimer();
   },
+
+  beforeDestroy() {
+    clearTimeout(this.timer);
+  },
 };
