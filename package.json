@@ -5,6 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
+    "build_windows": "SET NODE_ENV=production webpack --progress --hide-modules --config build/webpack.config.js",
     "lint": "eslint --ext .js,.vue src",
     "prepublish": "npm run lint && npm run build"
   },
