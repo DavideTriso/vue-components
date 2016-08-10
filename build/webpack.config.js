@@ -32,19 +32,11 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
-          name: 'img/[name].[ext]'
-        }
+        loader: 'url'
       },
       {
         test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-        loader: 'url',
-        query: {
-          limit: 10000,
-          name: 'fonts/[name].[ext]'
-        }
+        loader: 'url'
       }
     ]
   },
