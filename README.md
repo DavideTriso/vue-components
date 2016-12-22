@@ -4,6 +4,9 @@
 Vue Components is an easy to use Vue component library.
 It is written according to the BEM standard.
 
+## Documentation ##
+Visit the [vue-components documentation](https://vue-components.vivid-websolutions.nl) (WIP)
+
 ## Installation ##
 ### Using NPM ###
 `npm install vue-components --save`
