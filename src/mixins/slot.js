@@ -1,19 +1,30 @@
-/* eslint no-underscore-dangle: 0 */
-
 export default {
+  /**
+   * The properties which the component can use.
+   */
+  props: {
+    /**
+     * The content being displayed.
+     */
+    content: {
+      type: [String, Number],
+      required: false,
+    },
+  },
+
+  /**
+   * The methods the mixin can use.
+   */
   methods: {
     /**
-     * Method used to check if the component has a slot
+     * Method used to check if the component has a slot with a specified name.
      *
-     * @param slot The name of the slot
-     * @returns {boolean} If the slot exists
+     * @param {String} slotName The name of the slot.
+     *
+     * @returns {boolean} Whether the component has the slot.
      */
-    hasSlot(slot) {
-      if (!this._slotContents) {
-        return false;
-      }
-
-      return !!this._slotContents[slot];
+    hasSlot(slotName = 'default') {
+      return !!this.$slots[slotName];
     },
   },
 };

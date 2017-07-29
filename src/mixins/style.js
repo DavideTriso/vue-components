@@ -1,93 +1,77 @@
+import CSSUtil from '@/utils/css';
+
 export default {
+  /**
+   * The properties which the component can use.
+   */
   props: {
     /**
-     * The variant styling
+     * The variants of the component.
      */
     variants: {
       type: Array,
       required: false,
+      default() {
+        return [];
+      },
     },
 
     /**
-     * The contextual styling
+     * The variant of the component.
      */
-    contextualStyle: {
+    variant: {
       type: String,
       required: false,
     },
 
     /**
-     * The class
+     * The contextual type of the component.
      */
-    class: {
+    type: {
       type: String,
       required: false,
+      validator(value) {
+        return !!CSSUtil.contextualTypes.find(type => type === value);
+      },
+    },
+  },
+
+  /**
+   * The computed properties the mixin can use.
+   */
+  computed: {
+    /**
+     * Get the variants of the components.
+     *
+     * @returns {Array} The correct variants.
+     */
+    getVariants() {
+      if (this.type) {
+        this.variants.push(this.type);
+      }
+
+      if (this.variant) {
+        this.variants.push(this.variant);
+      }
+
+      return this.variants;
     },
   },
 
   methods: {
     /**
-     * Method used to find the variants of a slot
+     * Method used to get the class name for the CSS module.
      *
-     * @param element The name of the slot
-     * @returns {Array} The variants
-     */
-    elementVariants(element) {
-      if (this[element] && this[element].variants) {
-        return this[element].variants;
-      }
-
-      return [];
-    },
-
-    /**
-     * Method used to determine the contextual style for the slot
+     * @param {string} className The original CSS class name.
      *
-     * @param element
-     * @returns {string}
+     * @returns {string} The class name used as the CSS module.
      */
-    elementContextualStyle(element) {
-      if (this[element] && this[element].contextualStyle) {
-        return this[element].contextualStyle;
+    getClass(className) {
+      if (!this.$style) {
+        return className;
       }
 
-      return this.contextualStyle;
-    },
-
-    elementContent(element) {
-      if (typeof this[element] === 'string') {
-        return this[element];
-      }
-
-      if (typeof this[element] === 'object' && this[element].content) {
-        return this[element].content;
-      }
-
-      return undefined;
-    },
-
-    propOptional(element, key) {
-      if (typeof element === 'undefined') {
-        return undefined;
-      }
-
-      if (typeof element === 'string') {
-        return element;
-      }
-
-      if (element[key]) {
-        return element[key];
-      }
-
-      return undefined;
-    },
-
-    elementOptional(element, key) {
-      if (element[key]) {
-        return element[key];
-      }
-
-      return undefined;
+      return this.$style[className] || '';
     },
   },
 };

@@ -1,3 +1,61 @@
-<style src="./alert.styl" lang="stylus"></style>
-<template src="./alert.html"></template>
-<script src="./alert.js" lang="babel"></script>
+<style lang="stylus">
+  @import '~@/assets/stylus/helpers/imports.styl'
+
+  .alert
+    position: relative
+    background-color: palette('White')
+    border-radius: .125rem
+    box-shadow: $box_shadow_normal
+    display: block
+    font-weight: 300
+    margin-top: 1rem
+    padding: 1rem
+    &:first-child
+      margin-top: 0
+    +variant('primary')
+      background-color: palette('Blue')
+      border-color: palette('Blue')
+    +variant('success')
+      background-color: palette('Green')
+      border-color: palette('Green')
+    +variant('danger')
+      background-color: palette('Red')
+      border-color: palette('Red')
+    +variant('warning')
+      background-color: palette('Orange')
+      border-color: palette('Orange')
+    +variant('info')
+      background-color: palette('Light Blue')
+      border-color: palette('Light Blue')
+    +variant('dark')
+      color: palette('White')
+      background-color: palette('Blue Grey', '800')
+</style>
+<template>
+  <div :class="classNames">
+    <slot>
+      {{ content }}
+    </slot>
+  </div>
+</template>
+<script>
+  import BlockMixin from '@/mixins/block';
+  import ComponentMixin from '@/mixins/component';
+  import SlotMixin from '@/mixins/slot';
+
+  export default {
+    /**
+     * The name of the component.
+     */
+    name: 'alert',
+
+    /**
+     * The mixins used to extend the component.
+     */
+    mixins: [
+      BlockMixin,
+      ComponentMixin,
+      SlotMixin,
+    ],
+  };
+</script>
