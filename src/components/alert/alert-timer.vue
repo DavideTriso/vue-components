@@ -60,7 +60,7 @@
     ],
 
     /**
-     * The properties of the component
+     * The properties of the component.
      */
     props: {
       /**
