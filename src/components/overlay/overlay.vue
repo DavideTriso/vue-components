@@ -1,32 +1,18 @@
 <style lang="stylus">
   @import '~@/assets/stylus/helpers/imports.styl'
 
-  .nav-icon
-    border-radius: 100%
-    color: palette('White')
-    display: inline-flex
-    justify-content: space-between
-    flex-direction: column
-    padding: .5rem
-    margin: .75rem
-    position: relative
-    vertical-align: middle
-    &:hover
-      cursor: pointer
-    for $color, $palette in $colors
-      +variant($color)
-        color: palette($palette)
+  .overlay
+    background-color: rgba(0, 0, 0, 0.5)
+    height: 100%
+    left: 0
+    position: fixed
+    top: 0
+    width: 100%
+    z-index: 2
 </style>
 
 <template>
-  <div
-    :class="classNames"
-    @click="onClick"
-  >
-    <v-icon>
-      menu
-    </v-icon>
-  </div>
+  <div :class="classNames" @click="onClick"></div>
 </template>
 
 <script>
@@ -37,7 +23,7 @@
     /**
      * The name of the component.
      */
-    name: 'nav-icon',
+    name: 'overlay',
 
     /**
      * The mixins used to extend the component.
@@ -57,13 +43,6 @@
       onClick() {
         this.$emit('click');
       },
-    },
-
-    /**
-     * The sub components for this component.
-     */
-    components: {
-      VIcon: require('@/components/icon').Icon,
     },
   };
 </script>
