@@ -10,12 +10,16 @@
       transition: background-color $transition_speed ease-in-out, color $transition_speed ease-in-out
       &:hover
         background-color: palette('Grey', '200')
+      for $color, $palette in $colors
+        +variant($color)
+          color: palette($palette)
 </style>
 
 <template>
   <router-link
     :to="route"
     :class="classNames"
+    :active-class="activeClass"
   >
     <slot>
       {{ content }}
@@ -26,6 +30,7 @@
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';
   import SlotMixin from '@/mixins/slot';
+  import CSSUtil from '@/utils/css';
 
   export default {
     /**
@@ -57,6 +62,33 @@
       route: {
         type: Object,
         required: true,
+      },
+
+      /**
+       * The color of the active route.
+       */
+      activeColor: {
+        type: String,
+        required: false,
+      },
+    },
+
+    /**
+     * The computed properties for the component.
+     */
+    computed: {
+      /**
+       * Get the active class name in a CSS module form.
+       *
+       * @returns {string} The correct CSS module name.
+       */
+      activeClass() {
+        return this.getClass(
+          CSSUtil.variant(
+            CSSUtil.has(this.block, this.$options.element),
+            this.activeColor,
+          ),
+        );
       },
     },
   };
