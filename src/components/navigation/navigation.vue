@@ -1,3 +1,8 @@
+<style lang="stylus">
+  .navigation
+    margin: 0
+    padding: 0
+</style>
 <template>
   <ul :class="classNames">
     <slot>

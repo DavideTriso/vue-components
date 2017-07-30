@@ -1,3 +1,12 @@
+<style lang="stylus">
+  @import '~@/assets/stylus/helpers/imports.styl'
+
+  .navigation
+    +has('item')
+      list-style: none
+      margin: 0
+      padding: 0
+</style>
 <template>
   <li :class="classNames">
     <slot>
