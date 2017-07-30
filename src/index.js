@@ -1,15 +1,16 @@
+import '@/assets/stylus/vue-components.styl';
+
 import * as Alert from './components/alert';
 import * as Breadcrumb from './components/breadcrumb';
 import * as Button from './components/button';
 import * as Content from './components/content';
 import * as Drawer from './components/drawer';
 import * as Icon from './components/icon';
+import * as Label from './components/label';
 import * as NavIcon from './components/nav-icon';
 import * as Navigation from './components/navigation';
 import * as Overlay from './components/overlay';
 import * as Toolbar from './components/toolbar';
-
-require('@/assets/stylus/vue-components.styl');
 
 export default {
   Alert,
@@ -18,6 +19,7 @@ export default {
   Content,
   Drawer,
   Icon,
+  Label,
   NavIcon,
   Navigation,
   Overlay,
@@ -30,6 +32,7 @@ export default {
     Button.install(Vue);
     Drawer.install(Vue);
     Icon.install(Vue);
+    Label.install(Vue);
     NavIcon.install(Vue);
     Navigation.install(Vue);
     Overlay.install(Vue);
@@ -43,6 +46,7 @@ export { Button };
 export { Content };
 export { Drawer };
 export { Icon };
+export { Label };
 export { NavIcon };
 export { Navigation };
 export { Overlay };
