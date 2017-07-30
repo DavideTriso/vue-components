@@ -5,6 +5,8 @@
     +has('body')
       background-color: palette('White')
       flex: 1
+      height: calc(100vh - 3.0625rem - 4rem)
+      overflow-y: auto
 </style>
 <template>
   <div :class="classNames">
