@@ -8,6 +8,7 @@
     box-shadow: $box_shadow_minimum
     color: palette('Black')
     display: inline-block
+    font-size: 1rem
     font-weight: 400
     margin: 0
     outline: none
@@ -93,24 +94,28 @@
       },
     },
 
+    /**
+     * The methods that are available on the component.
+     */
     methods: {
+      /**
+       * Method which will emit the click event.
+       */
       click() {
         this.$emit('click');
       },
     },
 
+    /**
+     * Render method which will be used to generate the correct HTML.
+     *
+     * @returns {XML} The correct HTML.
+     */
     render() {
       const content = this.$slots.default ? this.$slots.default : this.content;
 
-      let button = (
-        <button
-          class={this.classNames}
-          on-click={this.click}
-        >{content}</button>
-      );
-
       if (this.href) {
-        button = (
+        return (
           <a
             class={this.classNames}
             href={this.href}
@@ -119,7 +124,7 @@
       }
 
       if (this.route) {
-        button = (
+        return (
           <router-link
             class={this.classNames}
             to={this.route}
@@ -127,7 +132,12 @@
         );
       }
 
-      return button;
+      return (
+        <button
+          class={this.classNames}
+          on-click={this.click}
+        >{content}</button>
+      );
     },
   };
 </script>
