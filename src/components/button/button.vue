@@ -2,7 +2,6 @@
   @import '~@/assets/stylus/helpers/imports.styl'
 
   .button
-    transition(100ms)
     border: none
     border-radius: .125rem
     box-shadow: $box_shadow_minimum
@@ -15,6 +14,7 @@
     padding: .75rem 1rem
     position: relative
     text-decoration: none
+    transition: background-color $transition_speed ease-in-out
     &:hover
       cursor: pointer
 

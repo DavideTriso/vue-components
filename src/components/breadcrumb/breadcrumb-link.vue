@@ -3,11 +3,11 @@
 
   .breadcrumb
     +has('link')
-      transition(100ms)
       color: palette('Blue Grey', '800')
       display: inline-block
       vertical-align: middle
       text-decoration: none
+      transition: color $transition_speed ease-in-out
       &:hover
         cursor: pointer
       +variant('primary')
