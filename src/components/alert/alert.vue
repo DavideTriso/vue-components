@@ -5,7 +5,7 @@
     position: relative
     background-color: palette('White')
     border-radius: .125rem
-    box-shadow: $box_shadow_normal
+    box-shadow: $box_shadow_minimum
     display: block
     font-weight: 300
     margin-top: 1rem
