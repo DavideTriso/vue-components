@@ -3,6 +3,7 @@ import '@/assets/stylus/vue-components.styl';
 import * as Alert from './components/alert';
 import * as Breadcrumb from './components/breadcrumb';
 import * as Button from './components/button';
+import * as Card from './components/card';
 import * as Content from './components/content';
 import * as Drawer from './components/drawer';
 import * as Icon from './components/icon';
@@ -16,6 +17,7 @@ export default {
   Alert,
   Breadcrumb,
   Button,
+  Card,
   Content,
   Drawer,
   Icon,
@@ -28,8 +30,9 @@ export default {
   install(Vue) {
     Alert.install(Vue);
     Breadcrumb.install(Vue);
-    Content.install(Vue);
     Button.install(Vue);
+    Card.install(Vue);
+    Content.install(Vue);
     Drawer.install(Vue);
     Icon.install(Vue);
     Label.install(Vue);
@@ -43,6 +46,7 @@ export default {
 export { Alert };
 export { Breadcrumb };
 export { Button };
+export { Card };
 export { Content };
 export { Drawer };
 export { Icon };
