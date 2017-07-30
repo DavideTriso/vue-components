@@ -101,7 +101,7 @@
       /**
        * Method which will emit the click event.
        */
-      click() {
+      onClick() {
         this.$emit('click');
       },
     },
@@ -135,7 +135,7 @@
       return (
         <button
           class={this.classNames}
-          on-click={this.click}
+          on-click={this.onClick}
         >{content}</button>
       );
     },

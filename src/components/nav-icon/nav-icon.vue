@@ -19,7 +19,10 @@
 </style>
 
 <template>
-  <div :class="classNames">
+  <div
+    :class="classNames"
+    @click="onClick"
+  >
     <v-icon>
       menu
     </v-icon>
@@ -43,6 +46,12 @@
       BlockMixin,
       ComponentMixin,
     ],
+
+    methods: {
+      onClick() {
+        this.$emit('click');
+      },
+    },
 
     /**
      * The sub components for this component.

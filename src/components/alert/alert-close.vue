@@ -17,7 +17,7 @@
 <template>
   <div
     :class="classNames"
-    @click="dismiss"
+    @click="onClick"
   >
     <slot>
       {{ content }}
@@ -57,7 +57,7 @@
       /**
        * Method which will emit the dismiss event.
        */
-      dismiss() {
+      onClick() {
         this.$emit('dismiss');
       },
     },

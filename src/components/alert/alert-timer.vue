@@ -109,13 +109,13 @@
        * Method which to start the timer.
        */
       startTimer() {
-        this.timer = setTimeout(this.dismiss, this.duration);
+        this.timer = setTimeout(this.onFinished, this.duration);
       },
 
       /**
        * Method which will emit the dismiss event.
        */
-      dismiss() {
+      onFinished() {
         this.$emit('dismiss');
       },
     },
