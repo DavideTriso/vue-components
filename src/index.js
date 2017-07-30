@@ -1,6 +1,7 @@
 import * as Alert from './components/alert';
 import * as Breadcrumb from './components/breadcrumb';
 import * as Button from './components/button';
+import * as Content from './components/content';
 import * as Drawer from './components/drawer';
 import * as Icon from './components/icon';
 import * as NavIcon from './components/nav-icon';
@@ -9,6 +10,7 @@ export default {
   Alert,
   Breadcrumb,
   Button,
+  Content,
   Drawer,
   Icon,
   NavIcon,
@@ -16,6 +18,7 @@ export default {
   install(Vue) {
     Alert.install(Vue);
     Breadcrumb.install(Vue);
+    Content.install(Vue);
     Button.install(Vue);
     Drawer.install(Vue);
     Icon.install(Vue);
@@ -26,6 +29,7 @@ export default {
 export { Alert };
 export { Breadcrumb };
 export { Button };
+export { Content };
 export { Drawer };
 export { Icon };
 export { NavIcon };
