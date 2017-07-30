@@ -46,6 +46,7 @@ export default {
      * @returns {Array} The correct variants.
      */
     getVariants() {
+      // Clone the array instead of referencing
       const variants = this.variants.slice(0);
 
       if (this.type) {
