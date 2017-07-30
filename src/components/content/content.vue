@@ -2,12 +2,7 @@
   .content
     margin: 1rem 0
     position: relative
-    min-height: calc(100vh - 2rem)
-    &:before
-      display: block
-      content: " "
-      height: 4rem
-      position: relative
+    min-height: calc(100vh - 4rem - 2rem)
 </style>
 <template>
   <div :class="classNames">

@@ -7,7 +7,7 @@
     flex-direction: column
     height: 100%
     left: 0
-    position: fixed
+    position: absolute
     top: 0
     transition: left $transition_speed ease-in-out
     width: 17.5rem
