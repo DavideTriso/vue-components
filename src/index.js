@@ -5,6 +5,9 @@ import * as Content from './components/content';
 import * as Drawer from './components/drawer';
 import * as Icon from './components/icon';
 import * as NavIcon from './components/nav-icon';
+import * as Toolbar from './components/toolbar';
+
+require('@/assets/stylus/vue-components.styl');
 
 export default {
   Alert,
@@ -14,6 +17,7 @@ export default {
   Drawer,
   Icon,
   NavIcon,
+  Toolbar,
 
   install(Vue) {
     Alert.install(Vue);
@@ -23,6 +27,7 @@ export default {
     Drawer.install(Vue);
     Icon.install(Vue);
     NavIcon.install(Vue);
+    Toolbar.install(Vue);
   },
 };
 
@@ -33,3 +38,4 @@ export { Content };
 export { Drawer };
 export { Icon };
 export { NavIcon };
+export { Toolbar };
