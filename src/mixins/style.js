@@ -46,15 +46,17 @@ export default {
      * @returns {Array} The correct variants.
      */
     getVariants() {
+      const variants = this.variants.slice(0);
+
       if (this.type) {
-        this.variants.push(this.type);
+        variants.push(this.type);
       }
 
       if (this.variant) {
-        this.variants.push(this.variant);
+        variants.push(this.variant);
       }
 
-      return this.variants;
+      return variants;
     },
   },
 
