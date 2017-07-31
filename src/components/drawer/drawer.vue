@@ -13,6 +13,7 @@
     width: 17.5rem
     z-index: 3
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -20,6 +21,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

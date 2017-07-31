@@ -3,6 +3,7 @@
     margin: 0
     padding: 0
 </style>
+
 <template>
   <ul :class="classNames">
     <slot>
@@ -10,6 +11,7 @@
     </slot>
   </ul>
 </template>
+
 <script>
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

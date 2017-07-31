@@ -10,6 +10,7 @@
       margin: 0 0 0.5rem 0
       padding: 0
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -17,6 +18,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

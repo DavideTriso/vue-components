@@ -5,6 +5,7 @@
     +has('content')
       font-size: 0.875rem
 </style>
+
 <template>
   <span :class="classNames">
     <slot>
@@ -12,6 +13,7 @@
     </slot>
   </span>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

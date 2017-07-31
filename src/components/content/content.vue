@@ -4,6 +4,7 @@
     position: relative
     min-height: calc(100vh - 4rem - 2rem)
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -11,6 +12,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

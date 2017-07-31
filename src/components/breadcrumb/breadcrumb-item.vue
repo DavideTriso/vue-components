@@ -15,6 +15,7 @@
       &:last-child:after
         display: none
 </style>
+
 <template>
   <li :class="classNames">
     <slot>
@@ -22,6 +23,7 @@
     </slot>
   </li>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

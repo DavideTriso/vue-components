@@ -13,6 +13,7 @@
         +variant($color)
           color: palette($palette)
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -20,6 +21,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

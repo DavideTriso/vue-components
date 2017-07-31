@@ -7,6 +7,7 @@
       border-bottom: 0.0625rem solid palette('Grey', '100')
       height: 4rem
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -14,6 +15,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

@@ -30,12 +30,14 @@
       +variant('dark')
         background: palette('White')
 </style>
+
 <template>
   <div
     :style="style"
     :class="classNames"
   ></div>
 </template>
+
 <script>
   import ElementMixin from '@/mixins/element';
   import ComponentMixin from '@/mixins/component';

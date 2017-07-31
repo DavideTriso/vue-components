@@ -24,6 +24,7 @@
     +variant('spin')
       animation: spin 2s infinite linear
 </style>
+
 <template>
   <i :class="classNames">
     <slot>
@@ -31,6 +32,7 @@
     </slot>
   </i>
 </template>
+
 <script>
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

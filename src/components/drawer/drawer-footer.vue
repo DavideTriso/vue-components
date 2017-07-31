@@ -10,6 +10,7 @@
       line-height: 1rem
       padding: 1rem 1.5rem
 </style>
+
 <template>
   <footer :class="classNames">
     <slot>
@@ -17,6 +18,7 @@
     </slot>
   </footer>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

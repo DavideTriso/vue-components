@@ -7,6 +7,7 @@
       display: inline-block
       vertical-align: middle
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -14,6 +15,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

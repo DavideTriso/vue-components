@@ -26,6 +26,7 @@
     </slot>
   </router-link>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';

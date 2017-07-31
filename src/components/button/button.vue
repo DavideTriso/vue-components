@@ -53,6 +53,7 @@
       text-align: center
       width: 100%
 </style>
+
 <script type="text/jsx">
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

@@ -9,6 +9,7 @@
     flex-direction: column
     width: 100%
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -16,6 +17,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

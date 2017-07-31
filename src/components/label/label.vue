@@ -30,6 +30,7 @@
       background-color: palette('Blue Grey', '800')
       color: palette('White')
 </style>
+
 <template>
   <span :class="classNames">
     <slot>
@@ -37,6 +38,7 @@
     </slot>
   </span>
 </template>
+
 <script>
   import BlockMixin from '@/mixins/block';
   import ComponentMixin from '@/mixins/component';

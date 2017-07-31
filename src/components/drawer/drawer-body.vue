@@ -8,6 +8,7 @@
       height: calc(100vh - 3.0625rem - 4rem)
       overflow-y: auto
 </style>
+
 <template>
   <div :class="classNames">
     <slot>
@@ -15,6 +16,7 @@
     </slot>
   </div>
 </template>
+
 <script>
   import ComponentMixin from '@/mixins/component';
   import ElementMixin from '@/mixins/element';
