@@ -8,6 +8,7 @@ import * as Content from './components/content';
 import * as Drawer from './components/drawer';
 import * as Icon from './components/icon';
 import * as Label from './components/label';
+import * as List from './components/list';
 import * as NavIcon from './components/nav-icon';
 import * as Navigation from './components/navigation';
 import * as Overlay from './components/overlay';
@@ -22,6 +23,7 @@ export default {
   Drawer,
   Icon,
   Label,
+  List,
   NavIcon,
   Navigation,
   Overlay,
@@ -36,6 +38,7 @@ export default {
     Drawer.install(Vue);
     Icon.install(Vue);
     Label.install(Vue);
+    List.install(Vue);
     NavIcon.install(Vue);
     Navigation.install(Vue);
     Overlay.install(Vue);
@@ -51,6 +54,7 @@ export { Content };
 export { Drawer };
 export { Icon };
 export { Label };
+export { List };
 export { NavIcon };
 export { Navigation };
 export { Overlay };
