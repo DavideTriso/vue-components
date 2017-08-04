@@ -4,36 +4,18 @@
   .breadcrumb
     +has('link')
       color: palette('Blue Grey', '800')
-      display: inline-block
+      display: inline-flex
       vertical-align: middle
       text-decoration: none
       transition: color $transition_speed ease-in-out
       &:hover
         cursor: pointer
-      +variant('primary')
-        color: palette('Blue')
-        &:hover
-          color: palette('Blue', '900')
-      +variant('success')
-        color: palette('Green')
-        &:hover
-          color: palette('Green', '900')
-      +variant('danger')
-        color: palette('Red')
-        &:hover
-          color: palette('Red', '900')
-      +variant('warning')
-        color: palette('Orange')
-        &:hover
-          color: palette('Orange', '900')
-      +variant('info')
-        color: palette('Light Blue')
-        &:hover
-          color: palette('Light Blue', '900')
-      +variant('dark')
-        color: palette('Blue Grey', '800')
-        &:hover
-          color: palette('Blue Grey', '900')
+
+      for $color, $palette in $colors
+        +variant($color)
+          color: palette($palette)
+          &:hover
+            color: palette($palette, '900')
 </style>
 
 <template>

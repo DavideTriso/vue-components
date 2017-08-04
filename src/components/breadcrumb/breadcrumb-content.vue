@@ -4,7 +4,7 @@
   .breadcrumb
     +has('content')
       color: palette('Grey')
-      display: inline-block
+      display: inline-flex
       vertical-align: middle
 </style>
 

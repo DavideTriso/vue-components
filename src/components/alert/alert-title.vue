@@ -4,7 +4,7 @@
   .alert
     +has('title')
       color: palette('White')
-      display: block
+      display: flex
       font-size: 1.125rem
       font-weight: 400
       margin: 0 0 0.5rem 0

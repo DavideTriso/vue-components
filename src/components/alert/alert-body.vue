@@ -4,7 +4,7 @@
   .alert
     +has('body')
       color: palette('White')
-      display: block
+      display: flex
 </style>
 
 <template>

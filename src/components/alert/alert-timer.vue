@@ -13,10 +13,12 @@
   .alert
     +has('timer')
       animation: timer linear
-      position: absolute
-      top: 0
-      left: 0
+      display: flex
       height: .25rem
+      left: 0
+      position: absolute
+      transition: background $transition_speed ease-in-out
+      top: 0
       +variant('primary')
         background: palette('Blue', '900')
       +variant('success')

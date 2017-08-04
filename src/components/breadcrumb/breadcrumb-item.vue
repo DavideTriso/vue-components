@@ -3,14 +3,14 @@
 
   .breadcrumb
     +has('item')
-      display: inline-block
+      display: inline-flex
       &:after
         color: palette('Grey', '500')
         content: '/'
-        display: inline-block
+        display: inline-flex
         font-family: Roboto, 'sans-serif'
         margin-left: .5rem
-        margin-right: .25rem
+        margin-right: .5rem
         vertical-align: middle
       &:last-child:after
         display: none

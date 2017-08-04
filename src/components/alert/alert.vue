@@ -2,33 +2,30 @@
   @import '~@/assets/stylus/helpers/imports.styl'
 
   .alert
-    position: relative
     background-color: palette('White')
     border-radius: .125rem
     box-shadow: $box_shadow_minimum
-    display: block
+    display: flex
+    flex-direction: column
     font-weight: 300
     margin-top: 1rem
     padding: 1rem
+    position: relative
+    transition: background-color $transition_speed ease-in-out
+    width: 100%
     &:first-child
       margin-top: 0
     +variant('primary')
       background-color: palette('Blue')
-      border-color: palette('Blue')
     +variant('success')
       background-color: palette('Green')
-      border-color: palette('Green')
     +variant('danger')
       background-color: palette('Red')
-      border-color: palette('Red')
     +variant('warning')
       background-color: palette('Orange')
-      border-color: palette('Orange')
     +variant('info')
       background-color: palette('Light Blue')
-      border-color: palette('Light Blue')
     +variant('dark')
-      color: palette('White')
       background-color: palette('Blue Grey', '800')
 </style>
 

@@ -2,10 +2,9 @@
   @import '~@/assets/stylus/helpers/imports.styl'
 
   .breadcrumb
-    display: block
+    display: flex
     list-style: none
     margin: 0
-    margin-bottom: 1rem
     padding: 0
 </style>
 

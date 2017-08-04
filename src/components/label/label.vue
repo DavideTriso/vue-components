@@ -5,11 +5,12 @@
     border-radius: .125rem
     box-shadow: $box_shadow_minimum
     color: palette('Black')
-    display: inline-block
+    display: inline-flex
     font-size: .875rem
     font-weight: 300
     margin: 0
     padding: 0.25rem 0.375rem
+    transition: background-color $transition_speed ease-in-out, color $transition_speed ease-in-out
     word-break: break-all
     +variant('primary')
       background-color: palette('Blue')

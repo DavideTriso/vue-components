@@ -6,10 +6,11 @@
     border-radius: .125rem
     box-shadow: $box_shadow_minimum
     color: palette('Black')
-    display: inline-block
+    display: inline-flex
     font-size: 1rem
     font-weight: 400
     margin: 0
+    margin-left: .5rem
     outline: none
     padding: .75rem 1rem
     position: relative
@@ -17,6 +18,8 @@
     transition: background-color $transition_speed ease-in-out
     &:hover
       cursor: pointer
+    &:first-child
+      margin-left: 0
 
     +variant('primary')
       background-color: palette('Blue')
